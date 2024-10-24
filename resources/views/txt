@@ -1,0 +1,3225 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+  <!-- Site made with Mobirise Online Website Builder v5.9.13, https://a.mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.9.13, a.mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="https://r.mobirisesite.com/592069/assets/images/photo-1468421870903-4df1664ac249.jpeg" type="image/x-icon">
+  <meta name="description" content="CommunityConnect connects people through local events, fostering engagement and strengthening neighborhood ties. Discover, participate, and organize events today!">
+  <title>Connect Communities</title>
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/web/assets/mobirise-icons2/mobirise2.css?rnd=1722242995262">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/bootstrap/css/bootstrap.min.css?rnd=1722242995263">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/bootstrap/css/bootstrap-grid.min.css?rnd=1722242995263">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/bootstrap/css/bootstrap-reboot.min.css?rnd=1722242995263">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/parallax/jarallax.css?rnd=1722242995263">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/dropdown/css/style.css?rnd=1722242995263">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/socicon/css/styles.css?rnd=1722242995263">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/theme/css/style.css?rnd=1722242995263">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;700&display=swap&display=swap"></noscript>
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/css/mbr-additional.css?rnd=1722242995263" type="text/css">
+  
+  
+  $events = Event::create($request->all());
+
+  
+
+<style>
+     .nav-link {
+    color: #333; /* Ensure links are a consistent color */
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.navbar-nav .nav-item:hover .nav-link {
+    color: #007bff; /* Example color change on hover */
+}
+
+.btn-outline-secondary {
+    border-color: transparent;
+    color: #333;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f8f9fa; /* Light grey background on hover */
+    color: #007bff; /* Example color change on hover */
+    border-color: #007bff; /* Example border color on hover */
+}
+
+.navbar-fixed-top {
+  top: auto;
+}
+#mobiriseBanner.container-banner {
+  height: 8rem;
+  opacity: 1;
+  -webkit-animation: 4s linear animationHeight;
+  -moz-animation: 4s linear animationHeight;
+    -o-animation: 4s linear animationHeight;
+       animation: 4s linear animationHeight;
+       transition: all  0.5s;
+}
+#mobiriseBanner.container-banner.container-banner-closing {
+  pointer-events: none;
+  height: 0;
+  opacity: 0;
+  -webkit-animation: 0.5s linear animationClosing;
+  -moz-animation:  0.5s linear animationClosing;
+    -o-animation:  0.5s linear animationClosing;
+       animation:  0.5s linear animationClosing;
+}
+#mobiriseBanner .banner {
+  min-height: 8rem;
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 10px;
+  opacity:1;
+  -webkit-animation: 4s linear animationBanner;
+  -moz-animation: 4s linear animationBanner;
+    -o-animation: 4s linear animationBanner;
+       animation: 4s linear animationBanner;
+  z-index: 1031;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#mobiriseBanner .banner p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  animation: none;
+  visibility: visible;
+}
+#mobiriseBanner .buy-license {
+  text-decoration: underline;
+}
+#mobiriseBanner .banner .btn {
+  margin: 0.3rem 0.5rem;
+  animation: none;
+  visibility: visible;
+}
+.navbar.opened {
+    z-index: 1032;
+}
+@-webkit-keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 75% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
+@-moz-keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 75% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
+@-o-keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 75% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
+   @keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 75% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
+@-webkit-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
+@-moz-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
+@-o-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
+   @keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
+   
+@-webkit-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@-moz-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@-o-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+
+@media(max-width: 767px) {
+  #mobiriseBanner.container-banner {
+    height: 12rem;
+  }
+  #mobiriseBanner .banner {
+    min-height: 12rem;
+  }
+  @-webkit-keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 75% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
+  @-moz-keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 75% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
+  @-o-keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 75% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
+    @keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 75% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
+  @-webkit-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
+  @-moz-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
+  @-o-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
+    @keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
+
+  @-webkit-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @-moz-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @-o-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+}
+</style>
+</head>
+<body>
+
+  
+  <section data-bs-version="5.1" class="menu menu2 cid-ujVeAgGc7s" once="menu" id="menu-5-ujVeAgGc7s">
+	
+
+	<nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+		<div class="container">
+			<div class="navbar-brand">
+				<span class="navbar-logo">
+					<a href="https://mobiri.se">
+						<img src="https://r.mobirisesite.com/592069/assets/images/photo-1468421870903-4df1664ac249.jpeg" alt="Mobirise Website Builder" style="height: 4.3rem;">
+					</a>
+				</span>
+				<span class="navbar-caption-wrap"><a class="navbar-caption text-black display-4" href="https://mobiri.se">Connect</a></span>
+			</div>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<div class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+					<li class="nav-item">
+						<a class="nav-link link text-black display-4" href="{{ route('events.index') }}">Events</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link link text-black display-4" href="{{ route('discover.index') }}" aria-expanded="false">Discover</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link link text-black display-4" href="{{ route('join') }}">Join</a>
+					</li>
+				</ul>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+                <a href="{{ route('register') }}" class="btn btn-secondary btn-lg w-100">Register</a>
+            </div>
+            <div class="col-md-6">
+                <a href="{{ route('login') }}" class="btn btn-secondary btn-lg w-100">Log In</a>
+            </div>
+        </div>
+				<div class="navbar-buttons mbr-section-btn">
+        <!-- <h1 class="text-center mb-4">Welcome to CommunityConnect</h1>
+        <p class="lead text-center">Please sign up or log in to start exploring.</p> -->
+
+        
+    </div>
+				
+			</div>
+		</div>
+	</nav>
+</section>
+
+<section data-bs-version="5.1" class="header16 cid-ujVeAgHL7h mbr-fullscreen mbr-parallax-background" id="hero-17-ujVeAgHL7h">
+  
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="content-wrap col-12 col-md-12">
+        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
+          <strong>Community Connect</strong>
+        </h1>
+        
+        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Unite, Engage, and Transform Your Neighborhood Today!</p>
+        <div class="mbr-section-btn">
+          <a class="btn btn-white-outline display-7" href="{{ route('join') }}">Join Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="gallery07 cid-ujVeAgHfji" id="gallery-14-ujVeAgHfji">
+  
+  
+  <div class="container-fluid gallery-wrapper">
+    <div class="row justify-content-center">
+      <div class="col-12 content-head">
+        
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-container-3 moving-left" style="transform: translate3d(-200px, 0px, 0px);">
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/592069/assets/images/photo-1442504028989-ab58b5f29a4a.jpeg" alt="Mobirise Website Builder">
+        </div>
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/592069/assets/images/photo-1495474472287-4d71bcdd2085.jpeg" alt="Mobirise Website Builder">
+        </div>
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/592069/assets/images/photo-1553073520-80b5ad5ec870.jpeg" alt="Mobirise Website Builder">
+        </div>
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/592069/assets/images/photo-1531844251246-9a1bfaae09fc.jpeg" alt="Mobirise Website Builder">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="features10 cid-ujVeAgIAXB" id="metrics-2-ujVeAgIAXB">
+  
+
+  
+  
+  <div class="container">
+    
+    <div class="row justify-content-center">
+      <div class="item features-without-image col-12 col-md-6 col-lg-4">
+        <div class="item-wrapper">
+          <div class="card-box align-left">
+            
+            <p class="card-title mbr-fonts-style mb-3 display-1">
+              <strong>500+</strong>
+            </p>
+            <p class="card-text mbr-fonts-style mb-3 display-7">Events Listed</p>
+            
+          </div>
+        </div>
+      </div>
+      <div class="item features-without-image col-12 col-md-6 col-lg-4">
+        <div class="item-wrapper">
+          <div class="card-box align-left">
+            
+            <p class="card-title mbr-fonts-style mb-3 display-1">
+              <strong>1000+</strong>
+            </p>
+            <p class="card-text mbr-fonts-style mb-3 display-7">Happy Participants</p>
+            
+          </div>
+        </div>
+      </div>
+      <div class="item features-without-image col-12 col-md-6 col-lg-4">
+        <div class="item-wrapper">
+          <div class="card-box align-left">
+            
+            <p class="card-title mbr-fonts-style mb-3 display-1">
+              <strong>50+</strong>
+            </p>
+            <p class="card-text mbr-fonts-style mb-3 display-7">Local Partners</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="list05 cid-ujVeAgIaNZ" id="faq-3-ujVeAgIaNZ">
+    
+    <div class="container">
+        <div class="col-12 mb-5 content-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>Got Questions? We Got Answers!</strong>
+            </h3>
+            
+        </div>
+        <div class="row justify-content-center ">
+            <div class="col-12 col-lg-8">
+                <div class="item features-without-image col-12 active">
+                    <div class="item-wrapper">
+                        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                            <strong>What is CommunityConnect all about?</strong></h5>
+                        <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">It's your go-to hub for local events!</p>
+                    </div>
+                </div>
+                <div class="item features-without-image col-12">
+                    <div class="item-wrapper">
+                        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                            <strong>How do I find events?</strong></h5>
+                        <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">Browse by location, category, or date!</p>
+                    </div>
+                </div>
+                <div class="item features-without-image col-12">
+                    <div class="item-wrapper">
+                        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                            <strong>Can I organize my own event?</strong></h5>
+                        <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">Absolutely! We love community-driven initiatives!</p>
+                    </div>
+                </div>
+                <div class="item features-without-image col-12">
+                  <div class="item-wrapper">
+                      <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                          <strong>Is there a fee to join?</strong></h5>
+                      <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">Nope! It's completely free to connect!</p>
+                  </div>
+              </div>
+              <div class="item features-without-image col-12">
+                <div class="item-wrapper">
+                    <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                        <strong>How can I get involved?</strong></h5>
+                    <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">Sign up and start exploring today!</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="article13 cid-ujVeAgI8Vq" id="call-to-action-3-ujVeAgI8Vq">
+    
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="card col-md-12 col-lg-10">
+                <div class="card-wrapper">
+                    <div class="card-box align-left">
+                        <h4 class="card-title mbr-fonts-style display-2">
+                            <strong>Join the Community Revolution Today!</strong>
+                        </h4>
+                        
+                        <div class="mbr-section-btn mt-4">
+                        <a class="btn btn-primary display-4" href="">Get Started!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="gallery10 cid-ujVeAgI5SV" id="features-61-ujVeAgI5SV">
+  
+
+
+  <div class="container-fluid">
+
+      <div class="loop-container">
+        <div class="item display-1" data-linewords="Discover Local Events * Engage with Neighbors * Organize Fun Activities * Volunteer Opportunities * Charity Drives * Festivals &amp; Celebrations *" data-direction="-1" data-speed="0.05">☁️ Best offers ☁️ Free delivery ☁️ Perfect design ☁️ Comfort ☁️ Support 24/7 ☁️ Vibes</div>
+
+        <div class="item display-1" data-linewords="Discover Local Events * Engage with Neighbors * Organize Fun Activities * Volunteer Opportunities * Charity Drives * Festivals &amp; Celebrations *" data-direction="-1" data-speed="0.05">☁️ Best offers ☁️ Free delivery ☁️ Perfect design ☁️ Comfort ☁️ Support 24/7 ☁️ Vibes</div>
+      </div>
+    
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="features03 cid-ujVeAgI6yn" id="events-1-ujVeAgI6yn">
+  
+  
+  <div class="container-fluid">
+    <div class="row justify-content-center mb-5">
+      <div class="col-12 content-head">
+        <div class="mbr-section-head">
+          <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+            <strong>Upcoming Events</strong>
+          </h4>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="item features-image col-12 col-md-6 col-lg-3 active">
+        <div class="item-wrapper">
+          <div class="item-img mb-3">
+            <img src="https://r.mobirisesite.com/592069/assets/images/photo-1511632765486-a01980e01a18.jpeg" alt="Mobirise Website Builder" title="">
+          </div>
+          <div class="item-content align-left">
+            <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-5">
+              <strong>Neighborhood Clean-Up Extravaganza</strong>
+            </h5>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">August 15, 2024</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">Join us for a day of cleaning, laughter, and community spirit! Bring your gloves and a sense of humor!</p>
+            <div class="mbr-section-btn item-footer">
+              <a href="" class="btn item-btn btn-primary display-7">Join</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item features-image col-12 col-md-6 col-lg-3">
+        <div class="item-wrapper">
+          <div class="item-img mb-3">
+            <img src="https://r.mobirisesite.com/592069/assets/images/photo-1520857014576-2c4f4c972b57.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="1" data-bs-slide-to="1">
+          </div>
+          <div class="item-content align-left">
+            <h5 class="item-title mbr-fonts-style mb-2 mt-0 display-5">
+              <strong>Charity Drive for Local Families</strong>
+            </h5>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">September 10, 2024</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">Help us gather supplies for families in need. Your generosity can make a difference!</p>
+            <div class="mbr-section-btn item-footer">
+              <a href="" class="btn item-btn btn-primary display-7">Join</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item features-image col-12 col-md-6 col-lg-3">
+        <div class="item-wrapper">
+          <div class="item-img mb-3">
+            <img src="https://r.mobirisesite.com/592069/assets/images/photo-1525026198548-4baa812f1183.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="2" data-bs-slide-to="2">
+          </div>
+          <div class="item-content align-left">
+            <h5 class="item-title mbr-fonts-style mb-2 mt-0 display-5">
+              <strong>Art in the Park Festival</strong>
+            </h5>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">October 5, 2024</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">Celebrate creativity with local artists, food trucks, and live music. Bring your friends and your best dance moves!</p>
+            <div class="mbr-section-btn item-footer">
+              <a href="" class="btn item-btn btn-primary display-7">Join</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item features-image col-12 col-md-6 col-lg-3">
+        <div class="item-wrapper">
+          <div class="item-img mb-3">
+            <img src="https://r.mobirisesite.com/592069/assets/images/photo-1528605248644-14dd04022da1.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="2" data-bs-slide-to="2">
+          </div>
+          <div class="item-content align-left">
+            <h5 class="item-title mbr-fonts-style mb-2 mt-0 display-5">
+              <strong>Sports Day Showdown</strong>
+            </h5>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">November 20, 2024</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">Compete in fun games and relive your childhood glory days. Prizes for winners and snacks for all!</p>
+            <div class="mbr-section-btn item-footer">
+              <a href="" class="btn item-btn btn-primary display-7">Join</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="people05 cid-ujVeAgIsEW" id="testimonials-5-ujVeAgIsEW">
+	
+
+	
+	
+	<div class="container">
+		<div class="row mb-5 justify-content-center">
+			<div class="col-12 mb-0 content-head">
+				<h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+					<strong>Buzz</strong>
+				</h3>
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="item features-without-image col-12 col-md-6 col-lg-4 active">
+				<div class="item-wrapper">
+					<div class="card-box align-left">
+						<p class="card-text mbr-fonts-style display-7">CommunityConnect made it easy to find fun events!</p>
+						<div class="img-wrapper mt-4 mb-3">
+							<img src="https://r.mobirisesite.com/592069/assets/images/photo-1529139574466-a303027c1d8b.jpeg" alt="" data-slide-to="0" data-bs-slide-to="0">
+						</div>
+						<h5 class="card-title mbr-fonts-style display-7">
+							<strong>Emily Johnson</strong>
+						</h5>
+					</div>
+				</div>
+			</div>
+			<div class="item features-without-image col-12 col-md-6 col-lg-4">
+				<div class="item-wrapper">
+					<div class="card-box align-left">
+						<p class="card-text mbr-fonts-style display-7">I met amazing people at the charity drive!</p>
+						<div class="img-wrapper mt-4 mb-3">
+							<img src="https://r.mobirisesite.com/592069/assets/images/photo-1535026406642-530e01750ad7.jpeg" data-slide-to="1" data-bs-slide-to="1" alt="">
+						</div>
+						<h5 class="card-title mbr-fonts-style display-7">
+							<strong>Michael Smith</strong>
+						</h5>
+					</div>
+				</div>
+			</div>
+			<div class="item features-without-image col-12 col-md-6 col-lg-4">
+				<div class="item-wrapper">
+					<div class="card-box align-left">
+						<p class="card-text mbr-fonts-style display-7">The art festival was a blast!</p>
+						<div class="img-wrapper mt-4 mb-3">
+							<img src="https://r.mobirisesite.com/592069/assets/images/photo-1485811661309-ab85183a729c.jpeg" data-slide-to="2" data-bs-slide-to="2" alt="">
+						</div>
+						<h5 class="card-title mbr-fonts-style display-7">
+							<strong>Sarah Lee</strong>
+						</h5>
+					</div>
+				</div>
+			</div>
+			<div class="item features-without-image col-12 col-md-6 col-lg-4">
+				<div class="item-wrapper">
+					<div class="card-box align-left">
+						<p class="card-text mbr-fonts-style display-7">I love how easy it is to volunteer!</p>
+						<div class="img-wrapper mt-4 mb-3">
+							<img src="https://r.mobirisesite.com/592069/assets/images/photo-1557684387-08927d28c72a.jpeg" data-slide-to="4" data-bs-slide-to="4" alt="">
+						</div>
+						<h5 class="card-title mbr-fonts-style display-7">
+							<strong>David Brown</strong>
+						</h5>
+					</div>
+				</div>
+			</div>
+			<div class="item features-without-image col-12 col-md-6 col-lg-4">
+				<div class="item-wrapper">
+					<div class="card-box align-left">
+						<p class="card-text mbr-fonts-style display-7">Sports Day brought back so many memories!</p>
+						<div class="img-wrapper mt-4 mb-3">
+							<img src="https://r.mobirisesite.com/592069/assets/images/photo-1681075401974-907cc62a4373.jpeg" data-slide-to="6" data-bs-slide-to="6" alt="">
+						</div>
+						<h5 class="card-title mbr-fonts-style display-7">
+							<strong>Jessica White</strong>
+						</h5>
+					</div>
+				</div>
+			</div>
+			<div class="item features-without-image col-12 col-md-6 col-lg-4">
+				<div class="item-wrapper">
+					<div class="card-box align-left">
+						<p class="card-text mbr-fonts-style display-7">Can't wait for the next neighborhood clean-up!</p>
+						<div class="img-wrapper mt-4 mb-3">
+							<img src="https://r.mobirisesite.com/592069/assets/images/photo-1541881856704-3c4b2896c0f8.jpeg" data-slide-to="7" data-bs-slide-to="7" alt="">
+						</div>
+						<h5 class="card-title mbr-fonts-style display-7">
+							<strong>Chris Green</strong>
+						</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section data-bs-version="5.1" class="image02 cid-ujVeAgIWXF mbr-fullscreen mbr-parallax-background" id="image-13-ujVeAgIWXF">
+    
+    
+    <div class="container">
+        <div class="row"></div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="header18 cid-ujVeAgIrXV mbr-fullscreen" data-bg-video="https://www.youtube.com/embed/pq-lJBA1wos?autoplay=1&amp;loop=1&amp;playlist=pq-lJBA1wos&amp;t=20&amp;mute=1&amp;playsinline=1&amp;controls=0&amp;showinfo=0&amp;autohide=1&amp;allowfullscreen=true&amp;mode=transparent" id="video-5-ujVeAgIrXV">
+  
+
+  <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(0, 0, 0);"></div>
+  <div class="container-fluid">
+    <div class="row">
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="people03 cid-ujVeAgJhX3" id="team-1-ujVeAgJhX3">
+    
+    
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head mb-5">
+                    <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>Meet Us</strong>
+                    </h4>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="item features-image col-12 col-md-6 col-lg-3">
+                <div class="item-wrapper">
+                    <div class="item-img mb-3">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1633594708103-e6e41891b679.jpeg" alt="Mobirise Website Builder" title="">
+                    </div>
+                    <div class="item-content align-left">
+                        <h5 class="item-title mbr-fonts-style display-5">
+                            <strong>Emily</strong>
+                        </h5>
+                        <h6 class="item-subtitle mbr-fonts-style mb-3 display-7">Community Organizer</h6>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-lg-3">
+                <div class="item-wrapper">
+                    <div class="item-img mb-3">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1596421250711-9ec0ef9cbba3.jpeg" alt="Mobirise Website Builder" title="">
+                    </div>
+                    <div class="item-content align-left">
+                        <h5 class="item-title mbr-fonts-style display-5">
+                            <strong>Jake</strong>
+                        </h5>
+                        <h6 class="item-subtitle mbr-fonts-style mb-3 display-7">Event Coordinator</h6>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-lg-3">
+                <div class="item-wrapper">
+                    <div class="item-img mb-3">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1589571739149-47ed80eae6ba.jpeg" alt="Mobirise Website Builder" title="">
+                    </div>
+                    <div class="item-content align-left">
+                        <h5 class="item-title mbr-fonts-style display-5">
+                            <strong>Sophia</strong>
+                        </h5>
+                        <h6 class="item-subtitle mbr-fonts-style mb-3 display-7">Marketing Guru</h6>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-lg-3">
+                <div class="item-wrapper">
+                    <div class="item-img mb-3">
+                       <img src="https://r.mobirisesite.com/592069/assets/images/photo-1638868939857-11ac407b347a.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="3" data-bs-slide-to="3">
+                    </div>
+                    <div class="item-content align-left">
+                        <h5 class="item-title mbr-fonts-style display-5">
+                            <strong>Liam</strong>
+                        </h5>
+                        <h6 class="item-subtitle mbr-fonts-style mb-3 display-7">Tech Wizard</h6>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="clients04 cid-ujVeAgJmWr" id="clients-3-ujVeAgJmWr">
+    
+    
+    <div class="container-fluid">
+        <div class="row justify-content-center mb-5">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head">
+                    <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>Our Amazing Partners</strong>
+                    </h4>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2 active">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1596622723231-b20320c7346b.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="1" data-bs-slide-to="1">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1554463529-e27854014799.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="2" data-bs-slide-to="2">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1651044450619-5ce74d316987.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="3" data-bs-slide-to="3">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1606136968306-ab2868cc1f21.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="4" data-bs-slide-to="4">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1502828331539-51c709e80300.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="5" data-bs-slide-to="5">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1529612700005-e35377bf1415.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="6" data-bs-slide-to="6">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="social05 cid-ujVeAgJQG8" id="follow-us-2-ujVeAgJQG8">
+    
+
+    
+
+    <div class="container">
+        <div class="row">
+            <h3 class="mbr-section-title align-center mb-5 mbr-fonts-style display-2">
+                <strong>Join the Community Buzz!</strong>
+            </h3>
+            <div class="col-12">
+                <div class="social-row">
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-facebook"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-twitter socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-instagram socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-linkedin"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-twitch"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="form5 cid-ujVeAgJJO0" id="contact-form-3-ujVeAgJJO0">
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head mb-5">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>Get in Touch!</strong>
+                    </h3>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+                <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="TAtdUeScRw9Rll7EnJPZb5xEFCZ6AmboASeAb2fvIjITxUHOYYQNnx+AXj18TUs2GYJlF38B64v3etD3SgTpp/149th0/rnVwbmUEj0JtbJmStGMW4PDmI4VsQBmee6e">
+                    <div class="row">
+                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                            Oops...! some problem!
+                        </div>
+                    </div>
+                    <div class="dragArea row">
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="name">
+                            <input type="text" name="name" placeholder="Name" data-form-field="name" class="form-control" value="" id="name-contact-form-3-ujVeAgJJO0">
+                        </div>
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                            <input type="email" name="email" placeholder="Email" data-form-field="email" class="form-control" value="" id="email-contact-form-3-ujVeAgJJO0">
+                        </div>
+                        <div class="col-12 form-group mb-3 mb-3" data-for="url">
+                            <input type="url" name="url" placeholder="Phone" data-form-field="url" class="form-control" value="" id="url-contact-form-3-ujVeAgJJO0">
+                        </div>
+                        <div class="col-12 form-group mb-3" data-for="textarea">
+                            <textarea name="textarea" placeholder="Message" data-form-field="textarea" class="form-control" id="textarea-contact-form-3-ujVeAgJJO0"></textarea>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+                            <button type="submit" class="btn btn-primary display-7">Send It!</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="contacts03 cid-ujVeAgJeX1" id="contacts-11-ujVeAgJeX1">
+  
+
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-4">
+        <div class="col-12 col-md-12">
+          <h5 class="mbr-section-title mbr-fonts-style mt-0 mb-4 display-2">
+            <strong>Contact Us</strong>
+          </h5>
+          <p class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-7">
+            Phone: (555) 123-4567
+            <br>Email: info@communityconnect.com
+            <br>Address:  Nigeria
+            <br>Working Hours: Mon-Fri: 9am - 5pm
+          </p> 
+
+          
+        </div>
+      </div>
+        <div class="col-lg-8 side-features">
+        <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6045.3003145248895!2d-73.9884657!3d40.7477229!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9ac1f1b85%3A0x7e33d1c0e7af3be4!2zMzUwIDV0aCBBdmUsIE5ldyBZb3JrLCBOWSAxMDExOCwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1689597362021!5m2!1sen!2sen" allowfullscreen=""></iframe></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="footer3 cid-ujVeAgKICu" once="footers" id="footer-3-ujVeAgKICu">
+
+        
+
+    
+
+    <div class="container">
+        <div class="row">
+            <div class="row-links">
+                <ul class="header-menu">
+                  
+                  
+                  
+                  
+                <li class="header-menu-item mbr-fonts-style display-5">
+                    <a href="#" class="text-white">Dashboard</a>
+                  </li><li class="header-menu-item mbr-fonts-style display-5">
+                    <a href="#" class="text-white">Events</a>
+                  </li><li class="header-menu-item mbr-fonts-style display-5">
+                    <a href="#" class="text-white">About</a>
+                  </li><li class="header-menu-item mbr-fonts-style display-5">
+                    <a href="#" class="text-white">Contact</a>
+                  </li></ul>
+              </div>
+
+            <div class="col-12 mt-4">
+                <div class="social-row">
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-facebook display-7"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-twitter socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-instagram socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-linkedin"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-twitch"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mt-5">
+                <p class="mbr-fonts-style copyright display-7">© 2024 CommunityConnect. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="https://r.mobirisesite.com/592069/assets/web/assets/jquery/jquery.min.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/bootstrap/js/bootstrap.bundle.min.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/parallax/jarallax.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/smoothscroll/smooth-scroll.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/ytplayer/index.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/dropdown/js/navbar-dropdown.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/scrollgallery/scroll-gallery.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/vimeoplayer/player.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/theme/js/script.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/formoid/formoid.min.js?rnd=1722242995263"></script>
+  
+  
+  
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Your Community</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* Basic styling for discover page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .place {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+        .place h2 {
+            margin: 0;
+            color: #333;
+        }
+        .place p {
+            color: #666;
+        }
+        .place:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Discover Your Local Community</h1>
+        <p>Explore places, activities, and events around you.</p>
+
+        @foreach($places as $place)
+            <div class="place">
+                <h2>{{ $place['name'] }}</h2>
+                <p><strong>Type:</strong> {{ $place['type'] }}</p>
+                <p>{{ $place['description'] }}</p>
+                <button onclick="learnMore('{{ $place['name'] }}')">Learn More</button>
+            </div>
+        @endforeach
+    </div>
+
+    <!-- Optional JavaScript for "Learn More" button action -->
+    <script>
+        function learnMore(placeName) {
+            alert('Learn more about ' + placeName + ' coming soon!');
+        }
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events</title>
+    <!-- Include jQuery (or use Vue.js or another library) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Upcoming Events</h1>
+
+    <!-- Filters -->
+    <div>
+        <input type="text" id="filter-name" placeholder="Search by event name">
+        <input type="date" id="filter-date">
+        <button id="filter-btn">Filter Events</button>
+    </div>
+
+    <!-- Events List -->
+    <div id="events-list">
+        <!-- Events will be loaded here dynamically -->
+    </div>
+
+    <!-- JavaScript for Real-Time Filtering and Joining Events -->
+    <script>
+        $(document).ready(function() {
+            // Fetch events initially
+            fetchEvents();
+
+            // Fetch events based on filters
+            $('#filter-btn').click(function() {
+                fetchEvents();
+            });
+
+            // Function to fetch events with filters
+            function fetchEvents() {
+                var name = $('#filter-name').val();
+                var date = $('#filter-date').val();
+
+                $.ajax({
+                    url: "{{ route('events.fetch') }}",
+                    method: 'GET',
+                    data: {
+                        name: name,
+                        date: date
+                    },
+                    success: function(events) {
+                        var eventsList = $('#events-list');
+                        eventsList.empty(); // Clear current events
+
+                        if(events.length > 0) {
+                            $.each(events, function(index, event) {
+                                eventsList.append(`
+                                    <div>
+                                        <h2>${event.name}</h2>
+                                        <p>${event.description}</p>
+                                        <p><strong>Date:</strong> ${new Date(event.event_date).toLocaleString()}</p>
+                                        <p><strong>Location:</strong> ${event.location}</p>
+                                        <button onclick="joinEvent(${event.id})">Join Event</button>
+                                    </div>
+                                `);
+                            });
+                        } else {
+                            eventsList.append('<p>No events found</p>');
+                        }
+                    }
+                });
+            }
+
+            // Function to join an event
+            window.joinEvent = function(eventId) {
+                $.ajax({
+                    url: `/events/join/${eventId}`,
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    success: function(response) {
+                        alert(response.message);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Community Connect</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&callback=initMap"></script>
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+        .marker-cluster {
+            background-color: #f00;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 10px;
+            padding: 0;
+            position: relative;
+        }
+        .marker-cluster-small {
+            width: 20px;
+            height: 20px;
+        }
+        .marker-cluster-medium {
+            width: 40px;
+            height: 40px;
+        }
+        .marker-cluster-large {
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+        var map;
+        var markers = [];
+        var marks = [];
+
+        function initMap() {
+            const mapOptions = {
+                center: {lat: 40.7128, lng: -74.0060},
+                zoom: 12,
+                styles: [
+                    {
+                        featureType: "all",
+                        elementType: "geometry",
+                        stylers: [{color: "#f5f5f5"}]
+                    },
+                    {
+                        featureType: "road.local",
+                        elementType: "labels.text.stroke",
+                        stylers: [{color: "#999999"}]
+                    }
+                ]
+            };
+
+            map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+            loadMarkers();
+        }
+
+        function loadMarkers() {
+            // Fetch events from the controller
+            fetch('/events')
+                .then(response => response.json())
+                .then(data => addMarkers(data.events));
+        }
+
+        function addMarker(event) {
+            var markerLatlng = new google.maps.LatLng(parseFloat(event.latitude), parseFloat(event.longitude));
+
+            var mark = new google.maps.Marker({
+                map: map,
+                position: markerLatlng,
+                title: event.title,
+                icon: getIconByCategory(event.category)
+            });
+
+            marks.push(mark);
+            markers.push(event);
+
+            google.maps.event.addListener(mark, 'click', function() {
+                showInfoWindow(this, event);
+            });
+        }
+
+        function getIconByCategory(category) {
+            switch (category.toLowerCase()) {
+                case 'volunteering':
+                    return 'https://chart.googleapis.com/chart?size=21x21&color=%230000ff&fillcolor=%23f00&chst=d_map_pin_letter&chld=v';
+                case 'arts':
+                    return 'https://chart.googleapis.com/chart?size=21x21&color=%230000ff&fillcolor=%23f00&chst=d_map_pin_letter&chld=a';
+                case 'sports':
+                    return 'https://chart.googleapis.com/chart?size=21x21&color=%230000ff&fillcolor=%23f00&chst=d_map_pin_letter&chld=s';
+                default:
+                    return 'https://chart.googleapis.com/chart?size=21x21&color=%230000ff&fillcolor=%23f00&chst=d_map_pin_letter&chld=%25';
+            }
+        }
+
+        function showInfoWindow(marker, event) {
+            var infowindow = new google.maps.InfoWindow();
+
+            var html = `
+                <h3>${event.title}</h3>
+                <p>Date: ${event.date}</p>
+                <p>Time: ${event.time}</p>
+                <p>Location: ${event.location}</p>
+                <button onclick="window.open('${route('event.show', ['id' => event.id])}', '_blank')">View Event</button>
+            `;
+
+            infowindow.setContent(html);
+            infowindow.open(map, marker);
+        }
+
+        function clusterizeMarkers() {
+            var markerCluster = new MarkerClusterer(map, marks, {
+                gridSize: 80,
+                maxZoom: 15
+            });
+        }
+
+        window.onload = initMap;
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .hero-section {
+            background: url('hero-bg.jpg') no-repeat center center;
+            background-size: cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+        }
+
+        .map-container {
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Community Connect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <h1>Discover Local Community Events</h1>
+            <p>Find events that interest you and get involved in your community.</p>
+            <a href="#" class="btn btn-primary btn-lg">Explore Events</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <!-- Event Discovery Section -->
+        <section id="events">
+            <h2 class="text-center mb-4">Upcoming Events</h2>
+            <div class="row">
+                <!-- Event Card -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="event1.jpg" class="card-img-top" alt="Event Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Community Clean-Up</h5>
+                            <p class="card-text">Join us for a community clean-up event at the local park.</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat Event Cards as needed -->
+            </div>
+        </section>
+
+        <!-- Interactive Map Section -->
+        <section id="map" class="mt-5">
+            <h2 class="text-center mb-4">Event Locations</h2>
+            <div class="map-container" id="event-map"></div>
+        </section>
+    </div>
+
+   
+
+
+        <div class="container mt-5">
+    <h2>Community Clean-Up</h2>
+    <p>Date: September 15, 2024</p>
+    <p>Time: 10:00 AM - 2:00 PM</p>
+    <p>Location: Local Park, 123 Main St</p>
+    <p>Description: Join us for a community clean-up event. Help keep our park clean and enjoy a day out with your neighbors.</p>
+    <button class="btn btn-success">RSVP</button>
+
+    <div class="container mt-5">
+    <h2>User Profile</h2>
+    <p>Name: John Doe</p>
+    <p>Email: johndoe@example.com</p>
+    <h4>Your Events</h4>
+    <ul>
+        <li>Community Clean-Up - RSVP'd</li>
+        <li>Art in the Park - Favorite</li>
+    </ul>
+</div>
+
+
+<div class="container mt-5">
+    <h2>Organizer Dashboard</h2>
+    <button class="btn btn-primary mb-3">Create New Event</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Community Clean-Up</td>
+                <td>September 15, 2024</td>
+                <td>
+                    <button class="btn btn-sm btn-warning">Edit</button>
+                    <button class="btn btn-sm btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6045.3003145248895!2d-73.9884657!3d40.7477229!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9ac1f1b85%3A0x7e33d1c0e7af3be4!2zMzUwIDV0aCBBdmUsIE5ldyBZb3JrLCBOWSAxMDExOCwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1689597362021!5m2!1sen!2sen" allowfullscreen=""></iframe></div>
+
+</div>
+ <!-- Footer -->
+ <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2024 Community Connect. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize map (example code for map integration)
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('event-map'), {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8
+            });
+        }
+    </script>
+    <!-- Include Google Maps API -->
+
+
+</body>
+
+</html>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{{ url('/') }}"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+  
+</nav>
+
+
+
+<!DOCTYPE html>
+<html >
+<head>
+  <!-- Site made with Mobirise Online Website Builder v5.9.13, https://a.mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.9.13, a.mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="https://r.mobirisesite.com/592069/assets/images/photo-1468421870903-4df1664ac249.jpeg" type="image/x-icon">
+  <meta name="description" content="CommunityConnect connects people through local events, fostering engagement and strengthening neighborhood ties. Discover, participate, and organize events today!">
+  <title>Connect Communities</title>
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/web/assets/mobirise-icons2/mobirise2.css?rnd=1722242995262">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/bootstrap/css/bootstrap.min.css?rnd=1722242995263">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/bootstrap/css/bootstrap-grid.min.css?rnd=1722242995263">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/bootstrap/css/bootstrap-reboot.min.css?rnd=1722242995263">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/parallax/jarallax.css?rnd=1722242995263">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/dropdown/css/style.css?rnd=1722242995263">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/socicon/css/styles.css?rnd=1722242995263">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/theme/css/style.css?rnd=1722242995263">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;700&display=swap&display=swap"></noscript>
+  <link rel="stylesheet" href="https://r.mobirisesite.com/592069/assets/css/mbr-additional.css?rnd=1722242995263" type="text/css">
+  
+  
+  
+  
+
+<style>
+     .nav-link {
+    color: #333; /* Ensure links are a consistent color */
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.navbar-nav .nav-item:hover .nav-link {
+    color: #007bff; /* Example color change on hover */
+}
+
+.btn-outline-secondary {
+    border-color: transparent;
+    color: #333;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f8f9fa; /* Light grey background on hover */
+    color: #007bff; /* Example color change on hover */
+    border-color: #007bff; /* Example border color on hover */
+}
+
+.navbar-fixed-top {
+  top: auto;
+}
+#mobiriseBanner.container-banner {
+  height: 8rem;
+  opacity: 1;
+  -webkit-animation: 4s linear animationHeight;
+  -moz-animation: 4s linear animationHeight;
+    -o-animation: 4s linear animationHeight;
+       animation: 4s linear animationHeight;
+       transition: all  0.5s;
+}
+#mobiriseBanner.container-banner.container-banner-closing {
+  pointer-events: none;
+  height: 0;
+  opacity: 0;
+  -webkit-animation: 0.5s linear animationClosing;
+  -moz-animation:  0.5s linear animationClosing;
+    -o-animation:  0.5s linear animationClosing;
+       animation:  0.5s linear animationClosing;
+}
+#mobiriseBanner .banner {
+  min-height: 8rem;
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 10px;
+  opacity:1;
+  -webkit-animation: 4s linear animationBanner;
+  -moz-animation: 4s linear animationBanner;
+    -o-animation: 4s linear animationBanner;
+       animation: 4s linear animationBanner;
+  z-index: 1031;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#mobiriseBanner .banner p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  animation: none;
+  visibility: visible;
+}
+#mobiriseBanner .buy-license {
+  text-decoration: underline;
+}
+#mobiriseBanner .banner .btn {
+  margin: 0.3rem 0.5rem;
+  animation: none;
+  visibility: visible;
+}
+.navbar.opened {
+    z-index: 1032;
+}
+@-webkit-keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 75% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
+@-moz-keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 75% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
+@-o-keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 75% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
+   @keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 75% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
+@-webkit-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
+@-moz-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
+@-o-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
+   @keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
+   
+@-webkit-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@-moz-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@-o-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+
+@media(max-width: 767px) {
+  #mobiriseBanner.container-banner {
+    height: 12rem;
+  }
+  #mobiriseBanner .banner {
+    min-height: 12rem;
+  }
+  @-webkit-keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 75% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
+  @-moz-keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 75% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
+  @-o-keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 75% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
+    @keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 75% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
+  @-webkit-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
+  @-moz-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
+  @-o-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
+    @keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
+
+  @-webkit-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @-moz-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @-o-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+}
+</style>
+</head>
+<body>
+
+  
+  <section data-bs-version="5.1" class="menu menu2 cid-ujVeAgGc7s" once="menu" id="menu-5-ujVeAgGc7s">
+	
+
+	<nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+		<div class="container">
+			<div class="navbar-brand">
+				<span class="navbar-logo">
+					
+						<img src="{{ asset('images/IMG_0796.jpg') }}" alt="Mobirise Website Builder" style="height: 5.3rem;">
+				</span>
+				<span class="navbar-caption-wrap"><a class="navbar-caption text-black display-4" href="">COMMUNITYCONNECT</a></span>
+			</div>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<div class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-dropdown" data-app-modern-menu="true">
+        <li class="nav-item">
+            <a class="nav-link link text-black display-4" href="{{ route('events.index') }}">Events</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link text-black display-4" href="{{ route('discover.index') }}" aria-expanded="false">Discover</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link text-black display-4" href="{{ route('join') }}">Join</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link text-black display-4" href="{{ route('dashboard') }}">Account</a>
+        </li>
+    </ul>
+
+    <!-- Register and Login Buttons -->
+    <div class="d-flex">
+        <a href="{{ route('register') }}" class="btn btn-outline-secondary me-2">Register</a>
+        <a href="{{ route('login') }}" class="btn btn-outline-secondary">Log In</a>
+    </div>
+</div>
+
+				<div class="navbar-buttons mbr-section-btn">
+        <!-- <h1 class="text-center mb-4">Welcome to CommunityConnect</h1>
+        <p class="lead text-center">Please sign up or log in to start exploring.</p> -->
+
+        
+    </div>
+				
+			</div>
+		</div>
+	</nav>
+</section>
+
+<section data-bs-version="5.1" class="header16 cid-ujVeAgHL7h mbr-fullscreen mbr-parallax-background" id="hero-17-ujVeAgHL7h">
+  
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="content-wrap col-12 col-md-12">
+        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
+          <strong>Community Connect</strong>
+        </h1>
+        
+        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Unite, Engage, and Transform Your Neighborhood Today!</p>
+        <div class="mbr-section-btn">
+          <a class="btn btn-white-outline display-7" href="{{ route('join') }}">Join Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="gallery07 cid-ujVeAgHfji" id="gallery-14-ujVeAgHfji">
+  
+  
+  <div class="container-fluid gallery-wrapper">
+    <div class="row justify-content-center">
+      <div class="col-12 content-head">
+        
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-container-3 moving-left" style="transform: translate3d(-200px, 0px, 0px);">
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/592069/assets/images/photo-1442504028989-ab58b5f29a4a.jpeg" alt="Mobirise Website Builder">
+        </div>
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/592069/assets/images/photo-1495474472287-4d71bcdd2085.jpeg" alt="Mobirise Website Builder">
+        </div>
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/592069/assets/images/photo-1553073520-80b5ad5ec870.jpeg" alt="Mobirise Website Builder">
+        </div>
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/592069/assets/images/photo-1531844251246-9a1bfaae09fc.jpeg" alt="Mobirise Website Builder">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="features10 cid-ujVeAgIAXB" id="metrics-2-ujVeAgIAXB">
+  
+
+  
+  
+  <div class="container">
+    
+    <div class="row justify-content-center">
+      <div class="item features-without-image col-12 col-md-6 col-lg-4">
+        <div class="item-wrapper">
+          <div class="card-box align-left">
+            
+            <p class="card-title mbr-fonts-style mb-3 display-1">
+              <strong>500+</strong>
+            </p>
+            <p class="card-text mbr-fonts-style mb-3 display-7">Events Listed</p>
+            
+          </div>
+        </div>
+      </div>
+      <div class="item features-without-image col-12 col-md-6 col-lg-4">
+        <div class="item-wrapper">
+          <div class="card-box align-left">
+            
+            <p class="card-title mbr-fonts-style mb-3 display-1">
+              <strong>1000+</strong>
+            </p>
+            <p class="card-text mbr-fonts-style mb-3 display-7">Happy Participants</p>
+            
+          </div>
+        </div>
+      </div>
+      <div class="item features-without-image col-12 col-md-6 col-lg-4">
+        <div class="item-wrapper">
+          <div class="card-box align-left">
+            
+            <p class="card-title mbr-fonts-style mb-3 display-1">
+              <strong>50+</strong>
+            </p>
+            <p class="card-text mbr-fonts-style mb-3 display-7">Local Partners</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="list05 cid-ujVeAgIaNZ" id="faq-3-ujVeAgIaNZ">
+    
+    <div class="container">
+        <div class="col-12 mb-5 content-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>Got Questions? We Got Answers!</strong>
+            </h3>
+            
+        </div>
+        <div class="row justify-content-center ">
+            <div class="col-12 col-lg-8">
+                <div class="item features-without-image col-12 active">
+                    <div class="item-wrapper">
+                        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                            <strong>What is CommunityConnect all about?</strong></h5>
+                        <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">It's your go-to hub for local events!</p>
+                    </div>
+                </div>
+                <div class="item features-without-image col-12">
+                    <div class="item-wrapper">
+                        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                            <strong>How do I find events?</strong></h5>
+                        <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">Browse by location, category, or date!</p>
+                    </div>
+                </div>
+                <div class="item features-without-image col-12">
+                    <div class="item-wrapper">
+                        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                            <strong>Can I organize my own event?</strong></h5>
+                        <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">Absolutely! We love community-driven initiatives!</p>
+                    </div>
+                </div>
+                <div class="item features-without-image col-12">
+                  <div class="item-wrapper">
+                      <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                          <strong>Is there a fee to join?</strong></h5>
+                      <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">Nope! It's completely free to connect!</p>
+                  </div>
+              </div>
+              <div class="item features-without-image col-12">
+                <div class="item-wrapper">
+                    <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                        <strong>How can I get involved?</strong></h5>
+                    <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">Sign up and start exploring today!</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="article13 cid-ujVeAgI8Vq" id="call-to-action-3-ujVeAgI8Vq">
+    
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="card col-md-12 col-lg-10">
+                <div class="card-wrapper">
+                    <div class="card-box align-left">
+                        <h4 class="card-title mbr-fonts-style display-2">
+                            <strong>Join the Community Revolution Today!</strong>
+                        </h4>
+                        
+                        <div class="mbr-section-btn mt-4">
+                        <a class="btn btn-primary display-4" href="">Get Started!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="gallery10 cid-ujVeAgI5SV" id="features-61-ujVeAgI5SV">
+  
+
+
+  <div class="container-fluid">
+
+      <div class="loop-container">
+        <div class="item display-1" data-linewords="Discover Local Events * Engage with Neighbors * Organize Fun Activities * Volunteer Opportunities * Charity Drives * Festivals &amp; Celebrations *" data-direction="-1" data-speed="0.05">☁️ Best offers ☁️ Free delivery ☁️ Perfect design ☁️ Comfort ☁️ Support 24/7 ☁️ Vibes</div>
+
+        <div class="item display-1" data-linewords="Discover Local Events * Engage with Neighbors * Organize Fun Activities * Volunteer Opportunities * Charity Drives * Festivals &amp; Celebrations *" data-direction="-1" data-speed="0.05">☁️ Best offers ☁️ Free delivery ☁️ Perfect design ☁️ Comfort ☁️ Support 24/7 ☁️ Vibes</div>
+      </div>
+    
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="features03 cid-ujVeAgI6yn" id="events-1-ujVeAgI6yn">
+  
+<div class="container-fluid">
+    <div class="row justify-content-center mb-5">
+        <div class="col-12 content-head">
+            <div class="mbr-section-head">
+                <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                    <strong>Upcoming Events</strong>
+                </h4>
+            </div>
+        </div>
+    </div>
+    <section data-bs-version="5.1" class="features03 cid-ujVeAgI6yn" id="events-1-ujVeAgI6yn">
+  
+  
+  <div class="container-fluid">
+    <div class="row justify-content-center mb-5">
+      <div class="col-12 content-head">
+        <div class="mbr-section-head">
+          <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+            <strong>Upcoming Events</strong>
+          </h4>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="item features-image col-12 col-md-6 col-lg-3 active">
+        <div class="item-wrapper">
+          <div class="item-img mb-3">
+            <img src="https://r.mobirisesite.com/592069/assets/images/photo-1511632765486-a01980e01a18.jpeg" alt="Mobirise Website Builder" title="">
+          </div>
+          <div class="item-content align-left">
+            <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-5">
+              <strong>Neighborhood Clean-Up Extravaganza</strong>
+            </h5>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">August 15, 2024</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">Join us for a day of cleaning, laughter, and community spirit! Bring your gloves and a sense of humor!</p>
+            <div class="mbr-section-btn item-footer">
+              <a href="" class="btn item-btn btn-primary display-7">Join</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item features-image col-12 col-md-6 col-lg-3">
+        <div class="item-wrapper">
+          <div class="item-img mb-3">
+            <img src="https://r.mobirisesite.com/592069/assets/images/photo-1520857014576-2c4f4c972b57.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="1" data-bs-slide-to="1">
+          </div>
+          <div class="item-content align-left">
+            <h5 class="item-title mbr-fonts-style mb-2 mt-0 display-5">
+              <strong>Charity Drive for Local Families</strong>
+            </h5>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">September 10, 2024</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">Help us gather supplies for families in need. Your generosity can make a difference!</p>
+            <div class="mbr-section-btn item-footer">
+              <a href="" class="btn item-btn btn-primary display-7">Join</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item features-image col-12 col-md-6 col-lg-3">
+        <div class="item-wrapper">
+          <div class="item-img mb-3">
+            <img src="https://r.mobirisesite.com/592069/assets/images/photo-1525026198548-4baa812f1183.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="2" data-bs-slide-to="2">
+          </div>
+          <div class="item-content align-left">
+            <h5 class="item-title mbr-fonts-style mb-2 mt-0 display-5">
+              <strong>Art in the Park Festival</strong>
+            </h5>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">October 5, 2024</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">Celebrate creativity with local artists, food trucks, and live music. Bring your friends and your best dance moves!</p>
+            <div class="mbr-section-btn item-footer">
+              <a href="" class="btn item-btn btn-primary display-7">Join</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item features-image col-12 col-md-6 col-lg-3">
+        <div class="item-wrapper">
+          <div class="item-img mb-3">
+            <img src="https://r.mobirisesite.com/592069/assets/images/photo-1528605248644-14dd04022da1.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="2" data-bs-slide-to="2">
+          </div>
+          <div class="item-content align-left">
+            <h5 class="item-title mbr-fonts-style mb-2 mt-0 display-5">
+              <strong>Sports Day Showdown</strong>
+            </h5>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">November 20, 2024</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">Compete in fun games and relive your childhood glory days. Prizes for winners and snacks for all!</p>
+            <div class="mbr-section-btn item-footer">
+              <a href="" class="btn item-btn btn-primary display-7">Join</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section data-bs-version="5.1" class="people05 cid-ujVeAgIsEW" id="testimonials-5-ujVeAgIsEW">
+	
+
+	
+	
+	<div class="container">
+		<div class="row mb-5 justify-content-center">
+			<div class="col-12 mb-0 content-head">
+				<h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+					<strong>Buzz</strong>
+				</h3>
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="item features-without-image col-12 col-md-6 col-lg-4 active">
+				<div class="item-wrapper">
+					<div class="card-box align-left">
+						<p class="card-text mbr-fonts-style display-7">CommunityConnect made it easy to find fun events!</p>
+						<div class="img-wrapper mt-4 mb-3">
+							<img src="https://r.mobirisesite.com/592069/assets/images/photo-1529139574466-a303027c1d8b.jpeg" alt="" data-slide-to="0" data-bs-slide-to="0">
+						</div>
+						<h5 class="card-title mbr-fonts-style display-7">
+							<strong>Emily Johnson</strong>
+						</h5>
+					</div>
+				</div>
+			</div>
+			<div class="item features-without-image col-12 col-md-6 col-lg-4">
+				<div class="item-wrapper">
+					<div class="card-box align-left">
+						<p class="card-text mbr-fonts-style display-7">I met amazing people at the charity drive!</p>
+						<div class="img-wrapper mt-4 mb-3">
+							<img src="https://r.mobirisesite.com/592069/assets/images/photo-1535026406642-530e01750ad7.jpeg" data-slide-to="1" data-bs-slide-to="1" alt="">
+						</div>
+						<h5 class="card-title mbr-fonts-style display-7">
+							<strong>Michael Smith</strong>
+						</h5>
+					</div>
+				</div>
+			</div>
+			<div class="item features-without-image col-12 col-md-6 col-lg-4">
+				<div class="item-wrapper">
+					<div class="card-box align-left">
+						<p class="card-text mbr-fonts-style display-7">The art festival was a blast!</p>
+						<div class="img-wrapper mt-4 mb-3">
+							<img src="https://r.mobirisesite.com/592069/assets/images/photo-1485811661309-ab85183a729c.jpeg" data-slide-to="2" data-bs-slide-to="2" alt="">
+						</div>
+						<h5 class="card-title mbr-fonts-style display-7">
+							<strong>Sarah Lee</strong>
+						</h5>
+					</div>
+				</div>
+			</div>
+			<div class="item features-without-image col-12 col-md-6 col-lg-4">
+				<div class="item-wrapper">
+					<div class="card-box align-left">
+						<p class="card-text mbr-fonts-style display-7">I love how easy it is to volunteer!</p>
+						<div class="img-wrapper mt-4 mb-3">
+							<img src="https://r.mobirisesite.com/592069/assets/images/photo-1557684387-08927d28c72a.jpeg" data-slide-to="4" data-bs-slide-to="4" alt="">
+						</div>
+						<h5 class="card-title mbr-fonts-style display-7">
+							<strong>David Brown</strong>
+						</h5>
+					</div>
+				</div>
+			</div>
+			<div class="item features-without-image col-12 col-md-6 col-lg-4">
+				<div class="item-wrapper">
+					<div class="card-box align-left">
+						<p class="card-text mbr-fonts-style display-7">Sports Day brought back so many memories!</p>
+						<div class="img-wrapper mt-4 mb-3">
+							<img src="https://r.mobirisesite.com/592069/assets/images/photo-1681075401974-907cc62a4373.jpeg" data-slide-to="6" data-bs-slide-to="6" alt="">
+						</div>
+						<h5 class="card-title mbr-fonts-style display-7">
+							<strong>Jessica White</strong>
+						</h5>
+					</div>
+				</div>
+			</div>
+			<div class="item features-without-image col-12 col-md-6 col-lg-4">
+				<div class="item-wrapper">
+					<div class="card-box align-left">
+						<p class="card-text mbr-fonts-style display-7">Can't wait for the next neighborhood clean-up!</p>
+						<div class="img-wrapper mt-4 mb-3">
+							<img src="https://r.mobirisesite.com/592069/assets/images/photo-1541881856704-3c4b2896c0f8.jpeg" data-slide-to="7" data-bs-slide-to="7" alt="">
+						</div>
+						<h5 class="card-title mbr-fonts-style display-7">
+							<strong>Chris Green</strong>
+						</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section data-bs-version="5.1" class="image02 cid-ujVeAgIWXF mbr-fullscreen mbr-parallax-background" id="image-13-ujVeAgIWXF">
+    
+    
+    <div class="container">
+        <div class="row"></div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="header18 cid-ujVeAgIrXV mbr-fullscreen" data-bg-video="https://youtu.be/ERnvwXADRZY?si=dMYZXbfuiPva-LQ8" id="video-5-ujVeAgIrXV">
+  
+
+  <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(0, 0, 0);"></div>
+  <div class="container-fluid">
+    <div class="row">
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="people03 cid-ujVeAgJhX3" id="team-1-ujVeAgJhX3">
+    
+    
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head mb-5">
+                    <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>Meet Us</strong>
+                    </h4>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="item features-image col-12 col-md-6 col-lg-3">
+                <div class="item-wrapper">
+                    <div class="item-img mb-3">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1633594708103-e6e41891b679.jpeg" alt="Mobirise Website Builder" title="">
+                    </div>
+                    <div class="item-content align-left">
+                        <h5 class="item-title mbr-fonts-style display-5">
+                            <strong>Emily</strong>
+                        </h5>
+                        <h6 class="item-subtitle mbr-fonts-style mb-3 display-7">Community Organizer</h6>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-lg-3">
+                <div class="item-wrapper">
+                    <div class="item-img mb-3">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1596421250711-9ec0ef9cbba3.jpeg" alt="Mobirise Website Builder" title="">
+                    </div>
+                    <div class="item-content align-left">
+                        <h5 class="item-title mbr-fonts-style display-5">
+                            <strong>Jake</strong>
+                        </h5>
+                        <h6 class="item-subtitle mbr-fonts-style mb-3 display-7">Event Coordinator</h6>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-lg-3">
+                <div class="item-wrapper">
+                    <div class="item-img mb-3">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1589571739149-47ed80eae6ba.jpeg" alt="Mobirise Website Builder" title="">
+                    </div>
+                    <div class="item-content align-left">
+                        <h5 class="item-title mbr-fonts-style display-5">
+                            <strong>Sophia</strong>
+                        </h5>
+                        <h6 class="item-subtitle mbr-fonts-style mb-3 display-7">Marketing Guru</h6>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-lg-3">
+                <div class="item-wrapper">
+                    <div class="item-img mb-3">
+                       <img src="https://r.mobirisesite.com/592069/assets/images/photo-1638868939857-11ac407b347a.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="3" data-bs-slide-to="3">
+                    </div>
+                    <div class="item-content align-left">
+                        <h5 class="item-title mbr-fonts-style display-5">
+                            <strong>Liam</strong>
+                        </h5>
+                        <h6 class="item-subtitle mbr-fonts-style mb-3 display-7">Tech Wizard</h6>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="clients04 cid-ujVeAgJmWr" id="clients-3-ujVeAgJmWr">
+    
+    
+    <div class="container-fluid">
+        <div class="row justify-content-center mb-5">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head">
+                    <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>Our Amazing Partners</strong>
+                    </h4>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2 active">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1596622723231-b20320c7346b.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="1" data-bs-slide-to="1">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1554463529-e27854014799.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="2" data-bs-slide-to="2">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1651044450619-5ce74d316987.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="3" data-bs-slide-to="3">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1606136968306-ab2868cc1f21.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="4" data-bs-slide-to="4">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1502828331539-51c709e80300.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="5" data-bs-slide-to="5">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="https://r.mobirisesite.com/592069/assets/images/photo-1529612700005-e35377bf1415.jpeg" alt="Mobirise Website Builder" title="" data-slide-to="6" data-bs-slide-to="6">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="social05 cid-ujVeAgJQG8" id="follow-us-2-ujVeAgJQG8">
+    
+
+    
+
+    <div class="container">
+        <div class="row">
+            <h3 class="mbr-section-title align-center mb-5 mbr-fonts-style display-2">
+                <strong>Join the Community Buzz!</strong>
+            </h3>
+            <div class="col-12">
+                <div class="social-row">
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-facebook"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-twitter socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-instagram socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-linkedin"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-twitch"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="form5 cid-ujVeAgJJO0" id="contact-form-3-ujVeAgJJO0">
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head mb-5">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>Get in Touch!</strong>
+                    </h3>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+                <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="TAtdUeScRw9Rll7EnJPZb5xEFCZ6AmboASeAb2fvIjITxUHOYYQNnx+AXj18TUs2GYJlF38B64v3etD3SgTpp/149th0/rnVwbmUEj0JtbJmStGMW4PDmI4VsQBmee6e">
+                    <div class="row">
+                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                            Oops...! some problem!
+                        </div>
+                    </div>
+                    <div class="dragArea row">
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="name">
+                            <input type="text" name="name" placeholder="Name" data-form-field="name" class="form-control" value="" id="name-contact-form-3-ujVeAgJJO0">
+                        </div>
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                            <input type="email" name="email" placeholder="Email" data-form-field="email" class="form-control" value="" id="email-contact-form-3-ujVeAgJJO0">
+                        </div>
+                        <div class="col-12 form-group mb-3 mb-3" data-for="url">
+                            <input type="url" name="url" placeholder="Phone" data-form-field="url" class="form-control" value="" id="url-contact-form-3-ujVeAgJJO0">
+                        </div>
+                        <div class="col-12 form-group mb-3" data-for="textarea">
+                            <textarea name="textarea" placeholder="Message" data-form-field="textarea" class="form-control" id="textarea-contact-form-3-ujVeAgJJO0"></textarea>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+                            <button type="submit" class="btn btn-primary display-7">Send It!</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="contacts03 cid-ujVeAgJeX1" id="contacts-11-ujVeAgJeX1">
+  
+
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-4">
+        <div class="col-12 col-md-12">
+          <h5 class="mbr-section-title mbr-fonts-style mt-0 mb-4 display-2">
+            <strong>Contact Us</strong>
+          </h5>
+          <p class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-7">
+            Phone: (555) 123-4567
+            <br>Email: info@communityconnect.com
+            <br>Address:  Nigeria
+            <br>Working Hours: Mon-Fri: 9am - 5pm
+          </p> 
+
+          
+        </div>
+      </div>
+        <div class="col-lg-8 side-features">
+        <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6045.3003145248895!2d-73.9884657!3d40.7477229!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9ac1f1b85%3A0x7e33d1c0e7af3be4!2zMzUwIDV0aCBBdmUsIE5ldyBZb3JrLCBOWSAxMDExOCwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1689597362021!5m2!1sen!2sen" allowfullscreen=""></iframe></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="footer3 cid-ujVeAgKICu" once="footers" id="footer-3-ujVeAgKICu">
+
+        
+
+    
+
+    <div class="container">
+        <div class="row">
+            <div class="row-links">
+                <ul class="header-menu">
+                  
+                  
+                  
+                
+
+            <div class="col-12 mt-4">
+                <div class="social-row">
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-facebook display-7"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-twitter socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-instagram socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-linkedin"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-twitch"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mt-5">
+                <p class="mbr-fonts-style copyright display-7">© 2024 CommunityConnect. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="https://r.mobirisesite.com/592069/assets/web/assets/jquery/jquery.min.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/bootstrap/js/bootstrap.bundle.min.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/parallax/jarallax.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/smoothscroll/smooth-scroll.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/ytplayer/index.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/dropdown/js/navbar-dropdown.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/scrollgallery/scroll-gallery.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/vimeoplayer/player.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/theme/js/script.js?rnd=1722242995263"></script>
+  <script src="https://r.mobirisesite.com/592069/assets/formoid/formoid.min.js?rnd=1722242995263"></script>
+  
+  
+  
+</body>
+</html>
+
+
+
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Card: Create Event -->
+            <div class="bg-white white:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-black-900 dark:text-black-100">
+                    <h3 class="text-lg font-semibold mb-4">Create & Manage Events</h3>
+                    <div class="flex justify-between items-center">
+                        <button type="button" class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">
+                            Create Event
+                        </button>
+                        <a href="{{ route('events.index') }}" class="text-blue-500 hover:text-blue-700 hover:underline">
+                            View All Events
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Send Messages -->
+            <div class="bg-white white:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-black-900 dark:text-black-100">
+                    <h3 class="text-lg font-semibold mb-4">Send & View Messages</h3>
+                    <div class="flex justify-between items-center">
+                        <button type="button" class="bg-yellow-500 hover:bg-yellow-700 text-black font-bold py-2 px-4 rounded">
+                            Send Message
+                        </button>
+                        <a href="{{ route('messages.index') }}" class="text-yellow-500 hover:text-yellow-700 hover:underline">
+                            View Messages
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Joined Events -->
+            <div class="bg-white black:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+    <div class="p-6 text-black-900 dark:text-black-100">
+        <h3 class="text-lg font-semibold mb-4">Your Joined Events</h3>
+        @if($joinedEvents->isEmpty())
+    <p class="text-gray-600">You haven't joined any events yet.</p>
+@else
+    <ol class="list-decimal pl-4">
+        @foreach($joinedEvents as $event)
+            <li class="mb-2">
+                <a href="{{ route('events.show', $event->id) }}" class="text-blue-500 hover:underline">
+                {{ $event->id }}  {{ $event->title }}
+               
+                </a>
+            </li>
+        @endforeach
+    </ol>
+
+
+        @endif
+    </div>
+</div>
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+
+            <!-- Card: Your RSVPs -->
+           <!-- Card: Your RSVPs -->
+<div class="bg-white white:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+    <div class="p-6 text-black-900 dark:text-black-100">
+        <h3 class="text-lg font-semibold mb-4">Your RSVPs</h3>
+        @if($userRsvps->isEmpty())
+            <p class="text-gray-600">You haven't made any RSVPs yet.</p>
+        @else
+            <ul class="list-disc pl-4">
+                @foreach($userRsvps as $rsvp)
+                    <li class="mb-2">
+                        <strong>Reservation for:</strong> {{ $rsvp->space }} <br>
+                        <strong>Date:</strong> {{ $rsvp->date }} <br>
+                        <strong>Name:</strong> {{ $rsvp->name }}
+                        <div class="mt-2">
+                            <!-- Cancel RSVP Form -->
+                            <form action="{{ route('rsvp.cancel', $rsvp->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-red-500 hover:underline">
+                                    Cancel RSVP
+                                </button>
+                            </form>
+                            <!-- Edit RSVP Link -->
+                            <a href="{{ route('rsvp.Edit', $rsvp->id) }}" class="text-blue-500 hover:underline ml-4">
+                                Edit
+                            </a>
+                        </div>
+                    </li>
+                @endforeach
+            </ul>
+        @endif
+    </div>
+</div>
+
+
+            <!-- Card: New Messages -->
+            <div class="bg-white white:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg col-span-2">
+                <div class="p-6 text-black-900 dark:text-black-100">
+                    <h3 class="text-lg font-semibold mb-4">New Messages</h3>
+                    @if (Auth::user()->unreadNotifications->count())
+                        <ul class="list-disc pl-4">
+                            @foreach (Auth::user()->unreadNotifications as $notification)
+                                <li class="mb-4">
+                                    <strong>{{ $notification->data['sender_name'] }}</strong> sent you a message: "{{ $notification->data['message'] }}"
+                                    <br>
+                                    <!-- Reply Button -->
+                                    <a href="#" class="text-blue-500 hover:underline reply-btn" data-toggle="reply-form-{{ $notification->id }}">Reply</a>
+                                    <!-- Hidden Reply Form -->
+                                    <div id="reply-form-{{ $notification->id }}" class="reply-form mt-2" style="display: none;">
+                                        <form action="{{ route('messages.reply', $notification->id) }}" method="POST">
+                                            @csrf
+                                            <div class="form-group">
+                                                <textarea name="message" class="form-control" rows="3" placeholder="Your reply" required></textarea>
+                                            </div>
+                                            <input type="hidden" name="recipient_id" value="{{ $notification->data['sender_id'] }}">
+                                            <button type="submit" class="btn btn-primary mt-2">Send Reply</button>
+                                        </form>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @else
+                        <p class="text-gray-600">No new messages.</p>
+                    @endif
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript for Reply Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Handle Reply Button Click
+            document.querySelectorAll('.reply-btn').forEach(function (button) {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    let target = e.target.getAttribute('data-toggle');
+                    let replyForm = document.getElementById(target);
+                    if (replyForm.style.display === 'none') {
+                        replyForm.style.display = 'block';
+                    } else {
+                        replyForm.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- <div class="container-fluid">
+  <div class="row content">
+   
+    <div class="col-sm-3 sidenav hidden-xs">
+      <ul class="nav nav-pills nav-stacked">
+        <a href="{{ route('profile.update') }}" class="btn" >PROFILE</a>
+         <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <a href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();" class="text-danger">
+                                      <h5>LOGOUT</h5> </form> </a></ul>
+    </div> -->
+
+      <div class="bg-dark shadow rounded-lg p-6 text-center">
+        <div class="mb-8">
+            <strong>
+                <h2 class="font-bold text-3xl text-gray-800">FORUMS</h2>
+            </strong>
+           
+        </div>
+    </div>
+
+        @if($forums->isEmpty())
+            <p class="text-gray-500 text-lg">No forums available yet. Check back soon!</p>
+        @else
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @foreach($forums as $forum)
+                    <!-- Forum Card -->
+                    <div class="bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-xl">
+                        <!-- Forum Title -->
+                        
+                        <a href="{{ route('forums.show', $forum->id) }}" class="text-blue-600 hover:text-blue-800 text-xl font-semibold">
+                        <strong> {{ $forum->title }}</strong><br>
+                           <strong>Enter Forum-></strong>
+                        </a>
+
+                        <!-- Created by -->
+                        <p class="text-gray-500 mt-2">Created by 
+                            <span class="font-medium text-gray-700">{{ $forum->name }}</span>
+                        </p>
+
+                        <!-- Forum Description -->
+                        <p class="mt-4 text-gray-700">
+                            {{ Str::limit($forum->description, 100) }} <!-- Truncated description to 100 characters -->
+                        </p>
+
+                        <!-- View Forum Button -->
+                        <div class="mt-4">
+                            <a href="{{ route('forums.show', $forum->id) }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200">
+                                View Forum
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        @endif
+    </div>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  <div class="bg-cover bg-center py-32" style="background-image: url('{{ asset('images/community-hero.jpg') }}');">
+      <div class="container mx-auto text-center text-black">
+          <h1 class="text-5xl font-extrabold mb-4 drop-shadow-lg">Discover More About Your Community</h1>
+          <p class="text-2xl mb-6 font-light leading-relaxed drop-shadow-md">Explore local spots, connect with community leaders, and engage in events that matter to you.</p>
+      </div>
+  </div>
+  
+  <div class="container">
+      
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+  
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="{{ asset('images/pips.jpeg') }}" alt="Los Angeles" style="width:50%;">
+        </div>
+  
+        <div class="item">
+          <img src="{{ asset('images/pips.jpeg') }}" alt="Chicago" style="width:50%;">
+        </div>
+      
+        <div class="item">
+          <img src="{{ asset('images/pips.jpeg') }}" alt="New york" style="width:50%;">
+        </div>
+      </div>
+  
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+
+
+
+
+  @extends('community.layout')
+
+@section('content')
+<style>
+    /* Inline CSS for Hero Section */
+    .bg-cover {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .bg-center {
+        background-position: center;
+    }
+
+    .py-32 {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+
+    .text-black {
+        color: #000;
+    }
+
+    .text-5xl {
+        font-size: 3rem;
+        line-height: 1.2;
+    }
+
+    .font-extrabold {
+        font-weight: 800;
+    }
+
+    .drop-shadow-lg {
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+
+    .font-light {
+        font-weight: 300;
+    }
+
+    .leading-relaxed {
+        line-height: 1.625;
+    }
+
+    .text-gray-800 {
+        color: #4a4a4a;
+    }
+
+    /* Inline CSS for Carousel */
+    .carousel-inner img {
+        width: 100%;
+        height: auto;
+    }
+
+    .carousel-control {
+        color: #000;
+    }
+
+    .carousel-control.left,
+    .carousel-control.right {
+        background-image: none;
+    }
+
+    .carousel-indicators li {
+        background-color: #000;
+    }
+
+    .carousel-indicators .active {
+        background-color: #fff;
+    }
+
+    /* Inline CSS for Community Leaders Section */
+    .media {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+    }
+
+    .media-object {
+        border-radius: 50%;
+    }
+
+    .media-body {
+        margin-left: 1rem;
+    }
+
+    /* Inline CSS for Get Involved Section */
+    .modal-content {
+        border-radius: 0.375rem;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.125);
+    }
+
+    .modal-header {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        border-radius: 0.375rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #fff;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        cursor: pointer;
+    }
+
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1.25rem;
+    }
+
+    .bg-blue-500 {
+        background-color: #007bff;
+    }
+
+    .text-white {
+        color: #fff;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .mt-16 {
+        margin-top: 4rem;
+    }
+
+    .py-16 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+</style>
+
+<!-- Hero Section -->
+
+
+<!-- Carousel Section -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  <div class="bg-cover bg-center py-32" style="background-image: url('{{ asset('images/community-hero.jpg') }}');">
+      <div class="container mx-auto text-center text-black">
+          <h1 class="text-5xl font-extrabold mb-4 drop-shadow-lg">Discover More About Your Community</h1>
+          <p class="text-2xl mb-6 font-light leading-relaxed drop-shadow-md">Explore local spots, connect with community leaders, and engage in events that matter to you.</p>
+      </div>
+  </div>
+  
+  <div class="container">
+      
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+  
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="{{ asset('images/pips.jpeg') }}" alt="Los Angeles" style="width:50%;">
+        </div>
+  
+        <div class="item">
+          <img src="{{ asset('images/pips.jpeg') }}" alt="Chicago" style="width:50%;">
+        </div>
+      
+        <div class="item">
+          <img src="{{ asset('images/pips.jpeg') }}" alt="New york" style="width:50%;">
+        </div>
+      </div>
+  
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+<!-- Community Leaders Section -->
+<div class="container mt-16">
+    <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Meet Our Community Leaders</h2>
+    <div class="media">
+        <div class="media-left">
+            <img src="{{ asset('images/7.jpg') }}" class="media-object" style="width:45px">
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">John Doe <small><i>Posted on February 19, 2016</i></small></h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            
+            <!-- Nested media object -->
+            <div class="media">
+                <div class="media-left">
+                    <img src="{{ asset('images/7.jpg') }}" class="media-object" style="width:45px">
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">John Doe <small><i>Posted on February 19, 2016</i></small></h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                    <!-- Nested media object -->
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="{{ asset('images/7.jpg') }}" class="media-object" style="width:45px">
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">John Doe <small><i>Posted on February 19, 2016</i></small></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Get Involved Section -->
+<div class="bg-blue-500 py-16 mt-16 text-white text-center">
+    <div class="container">
+        <h2 class="text-3xl font-bold mb-4">Ready to Get Involved?</h2>
+        <p class="text-lg mb-6">Join us and start making a difference in your community. Whether it's volunteering, attending events, or spreading the word, your contribution matters!</p>
+        
+        <!-- Button to trigger modal -->
+        <button type="button" class="btn btn-primary btn-lg px-6 py-3" data-bs-toggle="modal" data-bs-target="#getInvolvedModal">
+            Get Involved
+        </button>
+    </div>
+</div>
+
+<script>
+    document.getElementById('submitForm').addEventListener('click', function(event) {
+
+        // Get form data
+        var formData = new FormData(document.getElementById('getInvolvedForm'));
+
+        // Send the form data via AJAX
+        fetch('{{ route("getinvolved.submit") }}', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Success feedback
+                alert('Thank you for getting involved!');
+                document.getElementById('getInvolvedForm').reset();
+                // Close the modal
+                var modalElement = document.getElementById('getInvolvedModal');
+                var modalInstance = bootstrap.Modal.getInstance(modalElement);
+                modalInstance.hide();
+            } else {
+                // Handle validation errors
+                alert('There was an issue with your submission.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+</script>
+
+<!-- Get Involved Modal -->
+<div class="modal fade" id="getInvolvedModal" tabindex="-1" aria-labelledby="getInvolvedModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="getInvolvedModalLabel">Get Involved</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('getinvolved.submit') }}" id="getInvolvedForm" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="availability">Availability</label>
+                        <textarea class="form-control" id="availability" name="availability" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="skills">Skills</label>
+                        <textarea class="form-control" id="skills" name="skills" required></textarea>
+                    </div>
+                    <button type="submit" id="submitForm" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endsection
+
+
+
+
+
+
+
+
+<style>
+    /* General Styles */
+
+
+
+
+
+/* Dashboard Header */
+h2 {
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 20px;
+    
+}
+
+.well {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+/* Overview Section */
+.well.text-center {
+    background-color: #3498db;
+    color: #ffffff;
+   
+}
+
+.well.text-center h2 {
+    color: #ffffff;
+}
+
+.well.text-center p {
+    font-size: 18px;
+}
+
+/* Action Buttons */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #2980b9;
+    border: none;
+}
+
+.btn-warning {
+    background-color: #e67e22;
+    border: none;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* Section Headings */
+.well h1,
+.well h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #34495e;
+}
+
+/* List Styling */
+
+li {
+    font-size: 16px;
+    color: #2c3e50;
+    padding: 10px 0;
+}
+
+/* RSVP and Events Cards */
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 15px;
+    
+}
+
+.card h3 {
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+.card-header {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+   
+}
+
+.card-body {
+    padding: 10px 15px;
+}
+
+/* Footer Links */
+.text-link {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+.text-danger {
+    color: #e74c3c;
+    font-size: 14px;
+}
+
+.text-danger:hover {
+    opacity: 0.8;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .col-sm-4,
+    .col-sm-6 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .d-flex {
+        flex-direction: column;
+    }
+
+    .d-flex .btn {
+        margin-bottom: 10px;
+    }
+}
+
+ </style>
+</head>
+<body>
+
+<!-- Mobile Navigation -->
+
+
+
+<!-- Main Container -->
+
+
+
+  
+    <!-- Link to external CSS -->
+
+    <!-- Main Dashboard -->
+     <div class="container">
+    <div class="col-sm-9">
+        <!-- Dashboard Overview -->
+        <div class="well text-center">
+            <strong><h2>Dashboard Overview</h2></strong>
+            <p>A quick look at your stats.</p>
+            <strong><li class="active">Welcome: {{ Auth::user()->name }}</li></strong>
+        </div>
+
+        <!-- Action Sections Row -->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="well">
+                    <strong><h3>Create & Manage Events</h3></strong>
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ route('events.index') }}" class="btn btn-primary">Create Event</a>
+                        <a href="{{ route('welcome') }}" class="btn btn-primary">View All Events</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="well">
+                    <strong><h3>Send Messages</h3></strong>
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ route('messages.index') }}" class="btn btn-warning">Send Message</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Events, RSVPs, and Messages Row -->
+        <div class="row">
+            <!-- Joined Events -->
+            <div class="col-sm-4">
+                <div class="well">
+                    <strong><h1>YOUR JOINED EVENTS</h1></strong>
+                    @if($joinedEvents->isEmpty())
+                        <p>You haven't joined any events yet.</p>
+                    @else
+                        <ol class="list-unstyled">
+                            @foreach($joinedEvents as $event)
+                                <li><strong>Event Name: {{ $event->title }}</strong></li>
+                            @endforeach
+                        </ol>
+                    @endif
+                </div>
+            </div>
+
+            <!-- Created Events -->
+            <div class="col-sm-4">
+                <div class="well">
+                    <strong><h1>YOUR CREATED EVENTS</h1></strong>
+                    @forelse($createdEvents as $event)
+                        <div class="card">
+                            <div class="card-header"><h3>{{ $event->title }}</h3></div>
+                            <div class="card-body">
+                                <h1>Joined Users:</h1>
+                                @if($event->users->isEmpty())
+                                    <p>No users have joined this event yet.</p>
+                                @else
+                                    <ul>
+                                        @foreach($event->users as $user)
+                                            <li>{{ $user->name }} ({{ $user->email }})</li>
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            </div>
+                        </div>
+                    @empty
+                        <p>You haven't created any events yet.</p>
+                    @endforelse
+                </div>
+            </div>
+
+            <!-- RSVPs -->
+            <div class="col-sm-4">
+                <div class="well">
+                    <strong><h1>YOUR RSVPs</h1></strong>
+                    @if($reservations->isEmpty())
+                        <p>You haven't made any RSVPs yet.</p>
+                    @else
+                        <ul class="list-unstyled">
+                            @foreach($reservations as $reservation)
+                                <li>
+                                    <strong>{{ ucfirst(str_replace('-', ' ', $reservation->space)) }}</strong>
+                                    on {{ \Carbon\Carbon::parse($reservation->date)->format('F j, Y') }}
+                                    <div class="mt-2">
+                                        <form action="{{ route('rsvp.cancel', $reservation->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="text-danger">Cancel</button>
+                                        </form>
+                                        <a href="{{ route('rsvp.Edit', $reservation->id) }}" class="text-link">Edit</a>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @endif
+                </div>
+            </div>
+
+            <!-- New Messages -->
+            <div class="col-sm-4">
+                <div class="well">
+                    <strong><h1>NEW MESSAGES</h1></strong>
+                    @if(Auth::user()->unreadNotifications->count())
+                        <ul class="list-unstyled">
+                            @foreach(Auth::user()->unreadNotifications as $notification)
+                                <li>
+                                    <strong>{{ $notification->data['sender_name'] }}</strong>: "{{ $notification->data['message'] }}"
+                                    <form action="{{ route('notifications.delete', $notification->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-danger">Delete</button>
+                                    </form>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @else
+                        <p>No new messages.</p>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
