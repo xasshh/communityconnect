@@ -49,54 +49,87 @@
         /* Custom styles for hiding and showing cards */
         .event-card { display: none; }
         .event-card.show { display: block; }
+        .header .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* space between logo image and text */
+}
+.header .container-xl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-spacing {
+    margin-left: 2rem; /* Adjust spacing as needed */
+}
+
+.navmenu ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.navmenu ul li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.navmenu ul li a {
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.navmenu ul li a:hover {
+    color: green;
+}
+
+.sitename {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
     </style>
 <body class="index-page">
-
   <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
         <span class="navbar-logo">
-					
-						<img src="{{ asset('images/IMG_0796.jpg') }}"  style="height: 7.5rem;">
-				</span>
-        <h1 class="sitename">COMMUNITYCONNECT</h1>
+          <img src="{{ asset('images/IMG_0796.jpg') }}" style="height: 7.5rem;">
+        </span>
+        <h1 class="sitename ms-3">COMMUNITYCONNECT</h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu nav-spacing">
         <ul>
-        <li><a href="{{ route('welcome') }}"class="hover">Home</a></li>
+          <li><a href="{{ route('welcome') }}" class="hover">Home</a></li>
           <li><a href="{{ route('discover.index') }}">Discover</a></li>
-          <li><a href="{{ route('join') }}">Join Community</a></li>
-              </li>
-              <li class="dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="{{ route('events.index') }}">Create Events</a></li>
-                <a href="{{ route('rsvp.create') }}" class="">Rsvps</a>
-                <a href="{{ route('forums.index') }}" class="">Forums</a>
-                <a href="{{ route('blogs.create') }}" class="">Create Blogs</a>
-                <a href="{{ route('testimonial.create') }}" class="">Submit Testimonial</a>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>Accounts</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                <a href="{{ route('register') }}" class="">Register</a>
-                <a href="{{ route('login') }}" class="">LogIn</a>
-                </ul>
-              </li>
-         
+          <li><a href="{{ route('join') }}">Join</a></li>
+          <li class="dropdown">
+            <a href="#"><span>More</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{{ route('events.index') }}">Create Events</a></li>
+              <li><a href="{{ route('spaces.index') }}">Reservations</a></li>
+              <li><a href="{{ route('forums.index') }}">Forums</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#"><span>Accounts</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+              <li><a href="{{ route('register') }}">Register</a></li>
+              <li><a href="{{ route('login') }}">LogIn</a></li>
+            </ul>
+          </li>
+        </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <div class="">
-        
-        </div>
-        <div class="">
-       
-    </div>
     </div>
   </header>
+</body>
+
 
     <!-- Main Content -->
     <div class="container mt-5">

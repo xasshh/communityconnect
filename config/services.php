@@ -35,4 +35,11 @@ return [
     'key' => env('GOOGLE_MAPS_API_KEY'),
 ],
 
+'paypal' => [
+    'client_id' => env('Abiz7FsAIFjwLlM745DPYEARptojo1TvlRNULQRXYrOj6i-zhFgWL37wO5jWFut-hhvbCJ2o9mymfiDe'),
+    'secret' => env('EOt18aR0-I_0UGvL1U0BUt2WWeOogTA0HGxbZcDbEMTUH6QgwYrdJel-p43HKWQr_Kp0kbimhEAISewW'),
+    'mode' => env('PAYPAL_MODE', 'live'),
+],
+
+
 ];

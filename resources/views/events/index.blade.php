@@ -16,6 +16,8 @@
         color: #fff;
         border-bottom: 1px solid #ddd;
         border-radius: 0.5rem 0.5rem 0 0;
+        height: 10vh;
+        
     }
 
     .card-body {
@@ -81,7 +83,7 @@
 
 <div class="container mt-5">
     <div class="card shadow">
-            <h2 class="card-header mb-4">Create an Event</h2>
+           <center> <h2 class="card-header mb-4">Create an Event</h2></center>
         <div class="card-body">
             <form action="{{ route('events.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf

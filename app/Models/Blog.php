@@ -5,12 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BlogPost extends Model
+class Blog extends Model
 {
     use HasFactory;
-
-
-    
+     
     // Define the fillable properties
     protected $fillable = [
         'name',         // Author's name

@@ -130,13 +130,10 @@
     border: none; /* Remove default border */
     border-radius: 10px; /* Rounded corners */
     overflow: hidden; /* Prevent overflow of content */
-    transition: transform 0.2s; /* Smooth scaling effect on hover */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.card:hover {
-    transform: scale(1.05); /* Scale up card on hover */
-}
+
 
 .card-img-top {
     height: 200px; /* Fixed height for image */
@@ -173,6 +170,85 @@
 
 .btn-primary:hover {
     background-color: #0056b3; /* Darker shade on hover */
+}
+/* Card Custom Styling */
+.card-custom .event-card {
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    border: none;
+}
+
+.card-custom .event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.event-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-custom .card-body {
+    padding: 5px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.card-custom .btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+    padding: 8px 15px;
+}
+
+.card-custom .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.card-custom .btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+    padding: 8px 15px;
+}
+
+.card-custom .btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.text-center {
+    margin-top: 15px;
+}
+
+.video-section {
+    background-color: #f9f9fc;
+    padding: 60px 0;
+}
+
+.video-section h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.video-container iframe {
+    border-radius: 8px;
+    max-width: 100%;
+}
+.thumb-img {
+    max-width: 200px;
+    max-height: 100px;
 }
 
 
@@ -215,21 +291,19 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{{ route('discover.index') }}"class="hover">Discover</a></li>
-          <li><a href="{{ route('join') }}">Join Community</a></li>
+          <li><a href="{{ route('join') }}">Join</a></li>
           <!-- <li><a href="{{ route('events.index') }}">Create Events</a></li>
           <li><a href="{{ route('rsvp.create') }}">Rsvp</a></li> -->
               </li>
               <li class="dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
                 <li><a href="{{ route('events.index') }}">Create Events</a></li>
-                <a href="{{ route('rsvp.create') }}" class="">Rsvps</a>
+                <a href="{{ route('spaces.index') }}" class="">Reservations</a>
                 <li class="dropdown"><a href="{{ route('forums.index') }}" ><span>Forums</span><i class="bi bi-chevron-down toggle-dropdown"></i></a> 
                 <ul>
                 <a href="{{ route('forums.create') }}" class="">Create Forum</a>
                 </ul>
                 </li>
-                <a href="{{ route('blogs.create') }}" class="">Create Blogs</a>
-                <a href="{{ route('testimonial.create') }}" class="">Submit Testimonial</a>
 
                 </ul>
               </li>
@@ -333,7 +407,20 @@
         </div>
       </div>
     </section><!-- /About Section -->
-
+    <section id="intro-video" class="video-section py-5" style="background-color: #f4f4f9;">
+      <div class="container text-center">
+          <h2 class="mb-4">Experience Community Connect in Action</h2>
+          <p class="mb-4">
+              See how our platform brings people together through meaningful events and community engagement.
+          </p>
+  
+          <!-- Video Embed -->
+          <div class="video-container" data-aos="fade-up">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ERnvwXADRZY?si=qdm6OtqHv8QSQLnS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+      </div>
+  </section>
+  
     <!-- About 2 Section -->
     <section id="about-2" class="about-2 section gradient-bg">
 
@@ -509,17 +596,18 @@
                 }
           </script>
           <div class="swiper-wrapper">
-    @if($blogPosts->isEmpty())
+    @if($blogs->isEmpty())
         <div class="no-posts-message text-center">
             <p>No blog posts available at the moment. Check back later!</p>
         </div>
     @else
-        @foreach($blogPosts as $post)
+        @foreach($blogs as $post)
         <div class="swiper-slide">
             <div class="post-entry card card-custom">
-                <a href="#" class="thumb d-block">
-                    <img src="{{ asset('storage/' . $post->image_path) }}" alt="Blog Image" class="img-fluid rounded">
-                </a>
+              <a href="#" class="thumb d-block">                     
+    <img src="{{ asset('storage/' . $post->image_path) }}" alt="Blog Image" class="img-fluid rounded" style="max-width: 70vh; max-height: 70vh;">
+</a>
+
                 <h3>{{ $post->title }}</h3>
                 <p>{{ $post->content }}</p>
         
@@ -555,60 +643,129 @@
 <div class="container mt-5">
     <h2 class="text-center mb-4">Upcoming Events In Your Area..</h2>
 
-    <!-- Search Form -->
-      <!-- Search Form -->
-      <form action="{{ route('events.index') }}" method="GET" class="mb-5">
-        <div class="row">
-            <!-- Search input -->
-     
-            <!-- Category Filter -->
-       
-            <!-- Search button -->
-          
 
     <!-- Display Filtered Events -->
-    
     <div class="row card-custom">
-    @if($events->isEmpty())
-        <p class="text-center">No events found matching your search.</p>
-    @else
-        @forelse($events as $event)
-            <div class="col-12 col-md-6 col-lg-3 mb-4 d-flex align-items-stretch">
-                <div class="card">
-                    <img src="{{ asset('storage/' . $event->image_path) }}" class="card-img-top" alt="{{ $event->title }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $event->title }}</h5>
-                        <p class="card-text"><strong>Description:</strong> {{ $event->description }}</p>
-                        <p class="card-text"><strong>Location:</strong> {{ $event->location }}</p>
-                        <p class="card-text"><strong>Date & Time:</strong> {{ $event->event_datetime }}</p>
-                    </div>
-                    <div class="card-footer text-center">
-                        <form action="{{ route('events.join') }}" method="post">
-                            @csrf
-                            @if(session('success_event') == $event->id)  <!-- Check if session success is for this event -->
-                                <div class="alert alert-success">
-                                    You successfully joined this event!
-                                </div>
-                            @endif
-                            @if(session('error'))
-                                <div class="alert alert-danger">
-                                    {{ session('error') }}
-                                </div>
-                            @endif
-                            <input type="hidden" name="event_id" value="{{ $event->id }}">
-                            <button type="submit" class="btn btn-primary">Join</button>
-                        </form>
-                    </div>
-                </div>
+      @if($events->isEmpty())
+          <p class="text-center">No events found matching your search.</p>
+      @else
+          @foreach($events as $event)
+              <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
+                  <div class="card shadow-sm event-card">
+                      <img src="{{ asset('storage/' . $event->image_path) }}" class="card-img-top event-image" alt="{{ $event->title }}">
+                      <div class="card-body">
+                          <h5 class="card-title">{{ $event->title }}</h5>
+                          <p class="card-text"><strong>Description:</strong> {{ $event->description }}</p>
+                          <p class="card-text"><strong>Location:</strong> {{ $event->location }}</p>
+                          <p class="card-text"><strong>Date & Time:</strong> {{ $event->event_datetime }}</p>
+                          
+                          <!-- Display event creator information -->
+                          @if($event->user)
+                              <p class="card-text"><strong>Followers:</strong> {{ $event->user->followers()->count() }}</p>
+                              
+                              <!-- Follow/Unfollow Button -->
+                              @if(auth()->user()->following->contains($event->user->id))
+                                  <form action="{{ route('users.unfollow') }}" method="post" class="text-center">
+                                      @csrf
+                                      <input type="hidden" name="user_id" value="{{ $event->user->id }}">
+                                      <button type="submit" class="btn btn-warning">Unfollow</button>
+                                  </form>
+                              @else
+                                  <form action="{{ route('users.follow') }}" method="post" class="text-center">
+                                      @csrf
+                                      <input type="hidden" name="user_id" value="{{ $event->user->id }}">
+                                      <button type="submit" class="btn btn-secondary">Follow</button>
+                                  </form>
+                              @endif
+                          @else
+                          @endif
+                      </div>
+  
+                      <!-- Join button and status message -->
+                      <div class="card-footer text-center">
+                          <form action="{{ route('events.join') }}" method="post">
+                              @csrf
+                              @if(session('success_event') == $event->id)
+                                  <div class="alert alert-success">
+                                      You successfully joined this event!
+                                  </div>
+                              @endif
+                              @if(session('error'))
+                                  <div class="alert alert-danger">
+                                      {{ session('error') }}
+                                  </div>
+                              @endif
+                              <input type="hidden" name="event_id" value="{{ $event->id }}">
+                              
+                          </form>
+                          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#getInvolvedModal" data-event-id="{{ $event->id }}">
+                            Get Involved
+                        </button>
+                      </div>
+                  </div>
+              </div>
+          @endforeach
+      @endif
+  </div>
+  <div class="modal fade" id="getInvolvedModal" tabindex="-1" aria-labelledby="getInvolvedModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="getInvolvedModalLabel">Get Involved</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-        @empty
-            <div class="col-12">
-                <p class="text-center">No events found.</p>
+            <div class="modal-body">
+              <form action="{{ route('dashboard.getInvolved.submit') }}" id="getInvolvedForm" method="post" enctype="multipart/form-data">
+                @csrf
+                
+          
+                    <input type="hidden" name="event_id" id="event_id">
+                    <input type="hidden" name="event_id" value="{{ $event->id }}">
+ <!-- Hidden field for event ID -->
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="availability">Availability</label>
+                        <textarea class="form-control" id="availability" name="availability" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="skills">Skills</label>
+                        <textarea class="form-control" id="skills" name="skills" required></textarea>
+                    </div>
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    <button type="submit" id="submitForm" class="btn btn-primary">Submit</button>
+                </form>
             </div>
-        @endforelse
-    @endif
+        </div>
+    </div>
 </div>
+<script>
+  $(document).ready(function () {
+      // When the Get Involved button is clicked
+      $('[data-bs-target="#getInvolvedModal"]').on('click', function () {
+          var eventId = $(this).data('event-id'); // Get the event ID from the button
+          $('#event_id').val(eventId); // Set the hidden input field with the event ID
+      });
+  });
+</script>
 
+  
 
 
     <!-- Services 2 Section -->
@@ -831,14 +988,14 @@
             </div>
           </div>
         </div>
-        <div class="map-container">
+        <div class="map-container">~
   <div class="search-container">
     <h5>Search for locations near you..</h5>
     <input id="search-input" type="text" placeholder="Search location">
     <button class="btn-primary" id="search-btn">Search</button>
   </div>
   <div class="google-map">
-    <iframe id="map-iframe" frameborder="0" style="border:0" src="https://www.google.com/maps?q=New+York&output=embed" allowfullscreen></iframe>
+    <iframe id="map-iframe" frameborder="0" style="border:0" src="https://www.google.com/maps?q=Nigeria&output=embed" allowfullscreen></iframe>
   </div>
 </div>
 

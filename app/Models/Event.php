@@ -86,6 +86,9 @@ public function users()
                 ->withTimestamps(); // Assuming you have a pivot table called 'event_user'
 }
 
-    
-   
+public function user()
+{
+    return $this->belongsTo(User::class);
+}
+
 }

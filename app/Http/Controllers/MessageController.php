@@ -21,6 +21,7 @@ class MessageController extends Controller
     // Handle message submission and notify the user
     public function send(Request $request)
     {
+        
         $request->validate([
             'recipient_id' => 'required|exists:users,id',
             'message' => 'required|string|max:1000',
@@ -52,6 +53,14 @@ class MessageController extends Controller
        $reply->save();
 
       return redirect()->back()->with('success', 'Your reply has been sent!');
+  }
+ 
+  public function search(Request $request)
+  {
+      $query = $request->input('query');
+      $users = User::where('name', 'LIKE', "%{$query}%")->get();
+  
+      return response()->json($users);
   }
 
 }

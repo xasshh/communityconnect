@@ -8,6 +8,8 @@ use App\Models\Rsvp;
 use App\Models\Event;
 use App\Models\User;
 use App\Models\Reservation;
+use App\Models\Space;
+use App\Models\Getinvolved;
 
 
 class DashboardController extends Controller
@@ -27,17 +29,18 @@ class DashboardController extends Controller
          // Assuming 'events' relationship is defined in User model
         // $userRsvps = $user->reservations;
         $userCount = User::count();
-
+        $spaces = Space::with('user')->get();
         $totalEvents = Event::count();
         // Fetch the user's RSVPs
         // $userRsvps = Reservation::where('id', $user->id)->with('user')->get();
           $reservations = Reservation::with('user')->get();
         //   $reservations = Reservation::where('id', $user->id)->get();
+        $submissions = GetInvolved::where('user_id', Auth::id())->get(); // Get submissions for the logged-in user
 
         //  $userRsvps = Reservation::with('user')->get(); // 'user' refers to the relationship with User model
     // Get all events created by the current user
          $createdEvents = $user->events()->with('users')->get(); // Also load users who joined
         // Pass both joinedEvents and userRsvps to the view
-        return view('dashboard', compact('joinedEvents', 'createdEvents','reservations','userCount','totalEvents','user'));
+        return view('dashboard', compact('joinedEvents', 'createdEvents','reservations','userCount','totalEvents','user','spaces','submissions'));
     } 
-}
+} 

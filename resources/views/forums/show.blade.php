@@ -5,211 +5,122 @@
     /* Custom CSS for the Forum Threads Page */
 
 /* Container Styles */
+/* Container styling */
 .container {
-    max-width: 1140px;
-    margin: 0 auto;
-}
-.btn-primary{
-    background-color:green;
-    border: none;
-        border-radius: 0.375rem;
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-        font-weight: 600;
-        color: #fff;
-        transition: background-color 0.2s ease-in-out;
-    }
-
-/* Sidebar Styles */
-.card {
-    border: 1px solid #ddd;
-    border-radius: 0.375rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
-.card-header {
-    background-color: #343a40;
-    color: #fff;
-    font-size: 1.25rem;
+/* Forum Title and Description Card */
+.bg-dark {
+    background-color: green;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+.bg-dark h2 {
+    font-size: 2em;
+    color: white; /* Light blue for the title */
+}
+.bg-dark p {
+    font-size: 1.1em;
+    color: #d4e6f1; /* Softer blue for the description */
 }
 
-.card-body {
-    padding: 1.25rem;
+/* Threads Section */
+.bg-white {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
-.list-group-item {
-    border: none;
-    padding: 0.75rem 1.25rem;
-}
-
-.list-group-item a {
+.bg-white h3 {
     color: #343a40;
+    font-weight: bold;
+}
+
+/* Thread Items */
+.list-group-item {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s ease;
+}
+.list-group-item:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+.list-group-item a {
+    font-size: 1.25em;
+    color: black;
     text-decoration: none;
 }
-
 .list-group-item a:hover {
     text-decoration: underline;
 }
 
-.list-group-item i {
-    margin-right: 0.5rem;
-}
-
-/* Forum Title and Description */
-.bg-dark {
-    background-color: green;
-    color: #fff;
-}
-
-.text-gray-800 {
-    color: #343a40;
-}
-
-.text-gray-600 {
-    color: #6c757d;
-}
-
-/* Thread List Styles */
-.list-group-item {
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 0.375rem;
-    padding: 1rem;
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-.list-group-item:hover {
-    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.15);
-}
-
-.text-blue-600 {
-    color: white;
-    text-align: center;
-
-}
-
-.text-blue-800 {
-    color: #0056b3;
-    text-align: center;
-
-}
-
-.font-medium {
-    font-weight: 500;
-}
-
-.font-semibold {
-    font-weight: 600;
-}
-
+/* Thread Meta Information */
 .text-gray-500 {
     color: #6c757d;
 }
 
-.text-gray-700 {
-    color: #495057;
+/* Edit/Delete Buttons */
+.text-green-500 {
+    color: #28a745;
+}
+.text-green-500:hover {
+    color: #218838;
+}
+.text-red-500 {
+    color: #dc3545;
+}
+.text-red-500:hover {
+    color: #c82333;
 }
 
-/* Create Thread Form Styles */
+/* Create Thread Form */
 .bg-gray-100 {
-    background-color: #f8f9fa;
+    background-color: #f0f2f5;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.bg-gray-100 h3 {
+    color: #343a40;
+    font-weight: bold;
+}
+.btn-primary {
+    background-color: green;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: green;
 }
 
-.bg-blue-500 {
-    background-color: #007bff;
-}
-
-.bg-blue-700 {
-    background-color: #0056b3;
-}
-
-.text-white {
-    color: #fff;
-}
-
-.rounded-lg {
-    border-radius: 0.5rem;
-}
-
-.shadow-md {
-    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
-}
-
-.shadow-sm {
-    box-shadow: 0 0.0625rem 0.125rem rgba(0,0,0,0.075);
-}
-
-.focus\:border-blue-500:focus {
-    border-color: #007bff;
-}
-
-.focus\:ring-blue-200:focus {
-    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
-}
-
-.focus\:ring-opacity-50:focus {
-    --tw-ring-opacity: 0.5;
-}
-
-.mt-1 {
-    margin-top: 0.25rem;
-}
-
-.mb-4 {
-    margin-bottom: 1rem;
-}
-
-.mb-6 {
-    margin-bottom: 1.5rem;
-}
-
+/* Form Labels */
 .block {
-    display: block;
+    color: #495057;
+    font-size: 1em;
+    font-weight: 600;
 }
-
-.inline-block {
-    display: inline-block;
-}
-
-.w-full {
+input[type="text"],
+textarea {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
     width: 100%;
+    transition: border-color 0.3s ease;
 }
-
-.p-6 {
-    padding: 1.5rem;
-}
-
-.p-4 {
-    padding: 1rem;
-}
-
-.py-8 {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-.px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-.sm\:px-6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-}
-
-.lg\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-@media (max-width: 767.98px) {
-    .container {
-        padding: 0 1rem;
-    }
-    .card {
-        margin-bottom: 1rem;
-    }
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 </style>

@@ -4,7 +4,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\BlogPost;
+
+use App\Models\Blog;
+
 use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
@@ -31,7 +33,7 @@ class BlogController extends Controller
             $profilePicPath = $request->file('profile_pic')->store('profile_pics', 'public');
         }
     
-        BlogPost::create([
+        Blog::create([
             'name' => $request->name,
             'title' => $request->title,
             'content' => $request->content,

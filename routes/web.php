@@ -22,7 +22,10 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ReplyController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ReservationController;
-
+use App\Http\Controllers\SpaceController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\FollowController;
+use App\Http\Controllers\GetInvolvedController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,7 +39,29 @@ use App\Http\Controllers\ReservationController;
 
 // In your routes/web.php file
 
+
+Route::post('/dashboard/get-involved', [GetInvolvedController::class, 'store'])->name('dashboard.getInvolved.submit');
+// web.php
+
+use App\Http\Controllers\PayPalController;
+
+// 
+
+Route::get('/paypal', [PayPalController::class, 'payWithPaypal'])
+    ->name('pay_with_paypal');
+
+Route::post('/paypal', [PayPalController::class, 'handlePayment'])
+    ->name('handle_payment');
+
+Route::get('/success', [PayPalController::class, 'paymentSuccess'])
+    ->name('payment_success');
+
+Route::get('/cancel', [PayPalController::class, 'paymentCancel'])
+    ->name('payment_cancel');
+
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+// In web.php
+
 Route::patch('/profile/update', [UserProfileController::class, 'update'])->name('profilee.update');
 
 
@@ -130,6 +155,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/messages/send', [MessageController::class, 'send'])->name('messages.send');
     // Route::post('/messages/{message}/reply', [MessageController::class, 'reply'])->name('messages.reply');
     Route::post('/messages/reply/{notification}', [MessageController::class, 'reply'])->name('messages.reply');
+Route::get('/search-users', [MessageController::class, 'search'])->name('messages.search');
+
 });
 
 // routes/web.php
@@ -143,6 +170,9 @@ Route::middleware('auth')->group(function() {
 // Add this route in the web.php file
 // Route::post('/get-involved-submit', [InvolvementController::class, 'submit'])->name('getinvolved.submit');
 
+
+
+Route::resource('spaces', SpaceController::class);
 
 // Route::POST('/rsvp/store', [RsvpController::class, 'store'])->name('rsvp.store');
 

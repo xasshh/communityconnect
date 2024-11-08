@@ -57,7 +57,7 @@
 }
 
 .card-body .card-text {
-    color: #6c757d;
+    color: black;
 }
 
 /* Sidebar Styles */
@@ -78,7 +78,7 @@
 }
 
 .card-sidebar .list-group-item a {
-    color: #343a40;
+    color: black;
     text-decoration: none;
 }
 

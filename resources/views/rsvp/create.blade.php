@@ -107,7 +107,7 @@
 
 <div class="container mt-5">
     <div class="card shadow">
-            <h2 class="card-header mb-4">RSVP for {{ ucfirst(str_replace('-', ' ', $space)) }}</h2>
+           <center> <h2 class="card-header mb-4">RSVP for {{ ucfirst(str_replace('-', ' ', $space)) }}</h2></center>
         <div class="card-body">
             <p>Fill out the form below to reserve your space.</p>
 
@@ -142,7 +142,7 @@
     </div>
 </div>
 
-<div class="container mt-5">
+{{-- <div class="container mt-5">
     <h2>Reserve Your Space</h2>
     <p>Browse available spaces for rent in the community and make an RSVP to reserve your spot.</p>
     
@@ -168,7 +168,7 @@
             <p>No available spaces left for reservation.</p>
         @endif
     </div>
-</div>
+</div> --}}
 
 <!-- <div class="container mt-5">
     <h2>Reserve Your Space</h2>

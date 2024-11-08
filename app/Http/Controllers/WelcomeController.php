@@ -7,86 +7,65 @@ use App\Models\Event;
 use App\Models\User;
 use App\Models\Testimonial;
 use App\Models\Category;
-use App\Models\BlogPost;
+use App\Models\Blog;
 use Illuminate\Support\Facades\Auth;
 
 class WelcomeController extends Controller
 {
     public function index(Request $request)
     {
-        // Retrieve all events from the database
-        $blogPosts = BlogPost::latest()->get(); // Fetch latest blog posts
-    $testimonials = Testimonial::all();
-        $events = Event::all();
+        // Get all the necessary models
+        $blogs = Blog::latest()->get();
+        $testimonials = Testimonial::all();
         $userCount = User::count();
+        $totalEvents = Event::count();
+        $user = Auth::user();
+
+        // Fetch all categories for the dropdown filter
+        $categories = Category::all();
+
+        // Initialize query to fetch events based on filters
+        $query = Event::with('user'); // Eager load user for each event
+
+        // Search term
         $search = $request->input('search');
+        if ($search) {
+            $query->where(function($q) use ($search) {
+                $q->where('title', 'like', '%' . $search . '%')
+                  ->orWhere('description', 'like', '%' . $search . '%')
+                  ->orWhere('location', 'like', '%' . $search . '%');
+            });
+        }
 
-        // Query to fetch events based on the search term
-        // if ($search) {
-        //     $events = Event::where('title', 'like', '%' . $search . '%')
-        //         ->orWhere('description', 'like', '%' . $search . '%')
-        //         ->orWhere('location', 'like', '%' . $search . '%')
-        //         ->get();
-        // } else {
-        //     $events = Event::all();
-        // }
-    $search = $request->input('search');
-    $category = $request->input('category');
+        // Filter by category if selected
+        $categoryId = $request->input('category');
+        if ($categoryId) {
+            $query->where('category_id', $categoryId);
+        }
 
-    // Query to search by title, description, location, or category
-    $events = Event::query();
-    $search = $request->input('search');
-    $categoryId = $request->input('category'); // Correctly retrieving the category
+        // Execute the query and get the events
+        $events = $query->get();
 
-    $query = Event::query();
-
-    // Search by event title, description, or location
-    if ($search) {
-        $query->where(function($q) use ($search) {
-            $q->where('title', 'like', '%' . $search . '%')
-              ->orWhere('description', 'like', '%' . $search . '%')
-              ->orWhere('location', 'like', '%' . $search . '%');
-        });
-    }
-
-    // Filter by category if selected
-    if ($categoryId) {
-        $query->where('category_id', $categoryId);
-    }
-
-    // Get the filtered events
-    $events = $query->get();
-
-    // Get all categories for the search form dropdown
-    $categories = Category::all(); // Make sure to retrieve categories
-
-    // $events = $events->get();
-    $totalEvents = Event::count();
-        //  $events = $query->get();
-
-        // Pass the $events variable to the view
-        return view('welcome', compact('events','userCount','categories','testimonials','blogPosts','totalEvents'));
-        
+        // Pass variables to the view
+        return view('welcome', compact('events', 'userCount', 'categories', 'testimonials', 'blogs', 'totalEvents', 'user'));
     }
 
     public function joinEvent(Request $request)
-{
-    // Ensure user is logged in
-    $user = Auth::user();
-    
-    if (!$user) {
-        return redirect()->route('login')->with('error', 'You must be logged in to join an event.');
+    {
+        // Ensure user is logged in
+        $user = Auth::user();
+        
+        if (!$user) {
+            return redirect()->route('login')->with('error', 'You must be logged in to join an event.');
+        }
+
+        $eventId = $request->input('event_id');
+        
+        // Attach the event to the user if not already joined
+        if ($user->events()->where('event_id', $eventId)->doesntExist()) {
+            $user->events()->attach($eventId);
+        }
+
+        return redirect()->back()->with('success', 'You have successfully joined the event!');
     }
-
-    $eventId = $request->input('event_id');
-    
-    // Attach the event to the user if not already joined
-    if ($user->events()->where('event_id', $eventId)->doesntExist()) {
-        $user->events()->attach($eventId);
-    }
-
-    return redirect()->back()->with('success', 'You have successfully joined the event!');
-}
-
-    
 }

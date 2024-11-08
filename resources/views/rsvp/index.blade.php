@@ -77,7 +77,7 @@
 </style>
 
 <div class="container mt-5">
-    <h2>RSVP for {{ ucfirst(str_replace('-', ' ', $space)) }}</h2>
+    <h2>Reservations for {{ ucfirst(str_replace('-', ' ', $space)) }}</h2>
     <p>Fill out the form below to reserve your space.</p>
 
     @if(session('success'))

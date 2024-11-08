@@ -1,137 +1,90 @@
 <style>
-  body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f4f7fa;
-    color: #333;
-}
-
-.container {
-    margin-top: 30px;
-}
-
-.card {
-    border: none;
-    border-radius: 8px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.card-header {
-    background-color: green;
-    color: white;
-    padding: 15px 20px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
-
-.card-header h2 {
-    margin: 0;
-    font-size: 1.75rem;
-}
-
-.card-body {
-    padding: 20px;
-}
-
-.media {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #e9ecef;
-    padding-bottom: 15px;
-}
-
-.media img {
-    margin-right: 15px;
-    border-radius: 50%;
-    border: 2px solid #007bff;
-}
-
-.media-body {
-    flex: 1;
-}
-
-.media h5 {
-    margin: 0;
-    font-size: 1.25rem;
-    color: #343a40;
-}
-
-.media p {
-    margin: 5px 0;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.text-muted {
-    font-size: 0.875rem;
-    color: #6c757d;
-}
-
-.btn {
-    background-color: green;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-textarea {
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    padding: 10px;
-    width: 100%;
-    resize: none;
-    transition: border-color 0.3s;
-}
-
-textarea:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #0056b3;
-}
-
-.mb-4 {
-    margin-bottom: 1.5rem !important;
-}
-
-.alert {
-    padding: 15px;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-.alert-info {
-    background-color: #d1ecf1;
-    color: #0c5460;
-}
-
-.alert-warning {
-    background-color: #ffeeba;
-    color: #856404;
-}
-
+    /* General container styling */
+    .container {
+        margin-top: 30px;
+    }
+    
+    /* Card styling */
+    .card {
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+    
+    /* Card header styling */
+    .card-header {
+        background-color: green;
+        color: white;
+        padding: 15px;
+        font-size: 1.2em;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    /* Thread title and author styling */
+    .card-header h2, .card-header h4 {
+        margin: 0;
+    }
+    .card-header small {
+        font-size: 0.9em;
+    }
+    
+    /* Card body styling */
+    .card-body p {
+        font-size: 1em;
+        color: #333;
+        line-height: 1.5;
+    }
+    
+    /* Replies section styling */
+    .media {
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    
+    /* Reply author name */
+    .media-body h5 {
+        font-size: 1.1em;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: black;
+    }
+    
+    /* Timestamp styling */
+    .media-body small {
+        font-size: 0.85em;
+        color: black;
+    }
+    
+    /* Reply form styling */
+    textarea.form-control {
+        border-radius: 5px;
+        resize: none;
+    }
+    
+    .btn-primary {
+        background-color: green;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+    }
+    
+    .btn-primary:hover {
+        background-color: green;
+    }
+    
+    /* No replies text */
+    .card-body p {
+        font-style: italic;
+        color: black;
+       
+    }
+    
+    /* Spacing for reply section */
+    .form-group {
+        margin-top: 15px;
+    }
+    
 
 </style>
 <div class="container">
